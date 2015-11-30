@@ -19,24 +19,44 @@
 
     function CreateGifController(gif_data, window_w, window_h) {
         var divid = GetDivId(gif_data.row, gif_data.col);
+        var imgid = divid+"img";
         var simgid = divid+"simg";
-        $(divid).append($("<img></img>").attr("id", simgid.substring(1)));
-        $(divid).mouseenter(function(){
-            $(this).fadeIn("fast");
-        }).mouseleave(function(){
-            $(this).fadeTo("fast", 0.5);
-        });
         var path = gif_data.path;
-        var supergif = new SuperGif({
-            gif: $(simgid)[0],
-            max_width: Math.min(window_w/3, window_h/3*(4/3))
-        });
+        gif_data.width = Math.min(window_w/3, window_h/3*(4/3));
 
-        function loadComplete() {
-            console.log("image loading complete for image "+simgid);
-            gif_data.controller = supergif;
-        }
-        supergif.load_url(path, loadComplete);
+        gif_data.img = $("<img></img>")
+                       .attr("id", imgid.substring(1))
+                       .attr("src", path)
+                       .width(gif_data.width)
+                       .show()
+                       .load(function(){
+                         gif_data.simgdiv = $("<div></div>");
+                         gif_data.simgdiv.append($("<img></img>").attr("id", simgid.substring(1)))
+                                         .hide();
+                         $(divid).append(gif_data.simgdiv);
+
+                         var supergif = new SuperGif({
+                             gif: $(simgid)[0],
+                             max_width: gif_data.width
+                         });
+
+                         function loadComplete() {
+                             console.log("image loading complete for image "+simgid);
+                             gif_data.controller = supergif;
+                             gif_data.img.hide();
+                             gif_data.simgdiv.show();
+                         }
+                         supergif.load_url(path, loadComplete);
+
+                       });
+        $(divid).append(gif_data.img);
+
+        $(divid).fadeTo("fast", 0.5);
+        $(divid).mouseover(function(){
+            $(this).fadeTo("fast", 1);
+        }).mouseleave(function(){
+            $(this).fadeTo(1000, 0.5);
+        });
     }
 
     function CreateEventHub(window_w, window_h){
