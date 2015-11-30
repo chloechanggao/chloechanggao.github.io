@@ -27,6 +27,7 @@
         gif_data.img = $("<img></img>")
                        .attr("id", imgid.substring(1))
                        .attr("src", path)
+                       //.width("100%")
                        .width(gif_data.width)
                        .show()
                        .load(function(){
