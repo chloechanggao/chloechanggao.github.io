@@ -1,14 +1,14 @@
 (function LRB() {
     var Rbln = {
         gifdata: [
-            {row: 1, col: 1, path: "../gifs/wt3.gif"},
+            {row: 1, col: 1, path: "../gifs/wt2.gif"},
             {row: 1, col: 2, path: "../gifs/lyy2.gif"},
             {row: 1, col: 3, path: "../gifs/333.gif"},
             {row: 2, col: 1, path: "../gifs/332.gif"},
-            {row: 2, col: 2, path: "../gifs/wt2.gif"},
-            {row: 2, col: 3, path: "../gifs/331.gif"},
-            {row: 3, col: 1, path: "../gifs/lyy1.gif"},
-            {row: 3, col: 2, path: "../gifs/wt4.gif"},
+            {row: 2, col: 2, path: "../gifs/lyy1.gif"},
+            {row: 2, col: 3, path: "../gifs/lyy3.gif"},
+            {row: 3, col: 1, path: "../gifs/wt4.gif"},
+            {row: 3, col: 2, path: "../gifs/331.gif"},
             {row: 3, col: 3, path: "../gifs/wt1.gif"}
         ]
     };
