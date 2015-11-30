@@ -22,7 +22,8 @@
         var imgid = divid+"img";
         var simgid = divid+"simg";
         var path = gif_data.path;
-        gif_data.width = Math.min(window_w/3, window_h/3*(4/3));
+        gif_data.width = window_w/3;
+        gif_data.width = Math.min(window_w/3, window_h/3*(16/9));
 
         gif_data.img = $("<img></img>")
                        .attr("id", imgid.substring(1))
@@ -50,6 +51,11 @@
                          supergif.load_url(path, loadComplete);
 
                        });
+        $(divid).width(gif_data.width);
+        $(divid).closest("td").width(gif_data.width);
+        $(divid).closest("table").css("border", "none");
+        $(divid).closest("table").css("padding", "none");
+        $(divid).closest("table").css("margin", "none");
         $(divid).append(gif_data.img);
 
         $(divid).fadeTo("fast", 0.5);
