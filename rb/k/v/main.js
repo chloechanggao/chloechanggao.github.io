@@ -107,7 +107,11 @@
                 if (g.controller &&
                     g.row === Rbln.curr_mouse_rowcol.row &&
                     g.col === Rbln.curr_mouse_rowcol.col) {
-                    g.mfun(g, moveX, moveY, window_w, window_h);
+                    g.mfun(g,
+                           moveX - window_w / 3 * (g.col - 1),
+                           moveY - window_h / 3 * (g.row - 1),
+                           window_w / 3,
+                           window_h / 3);
                 }
             }
         }
