@@ -1,26 +1,50 @@
 (function LRB() {
-    var Rbln = {
-        gifdata: [
-            {row: 1, col: 1, path: "../gifs/wt2.gif"},
-            {row: 1, col: 2, path: "../gifs/lyy2.gif"},
-            {row: 1, col: 3, path: "../gifs/333.gif"},
-            {row: 2, col: 1, path: "../gifs/332.gif"},
-            {row: 2, col: 2, path: "../gifs/lyy1.gif"},
-            {row: 2, col: 3, path: "../gifs/lyy3.gif"},
-            {row: 3, col: 1, path: "../gifs/wt4.gif"},
-            {row: 3, col: 2, path: "../gifs/331.gif"},
-            {row: 3, col: 3, path: "../gifs/wt1.gif"}
-        ],
-        curr_mouse_rowcol: {
-            row: 0,
-            col: 0
+    var Rbln = {};
+    var default_mfun = function(g, moveX, moveY, maxX, maxY) {
+        var giflen = g.controller.get_length();
+        var f = 0;
+        if (g.row > g.col) {
+            f = giflen * (1 - moveX / maxX);
+        } else if (g.row < g.col) {
+            f = giflen * (1 - moveY / maxY);
+        } else {
+            f = giflen * (1 - Math.sqrt(moveX * moveY / maxX / maxY));
         }
+        g.controller.move_to(f);
+        g.controller.pause();
+    };
+    var horizontal_mfun = function(g, moveX, moveY, maxX, maxY) {
+        var giflen = g.controller.get_length();
+        var f = giflen * (1 - moveX / maxX);
+        g.controller.move_to(f);
+        g.controller.pause();
+    };
+    var vertical_mfun = function(g, moveX, moveY, maxX, maxY) {
+        var giflen = g.controller.get_length();
+        var f = giflen * (1 - moveX / maxX);
+        g.controller.move_to(f);
+        g.controller.pause();
+    };
+    Rbln.gifdata = [
+        {row: 1, col: 1, path: "../gifs/wt2.gif", mfun: horizontal_mfun},
+        {row: 1, col: 2, path: "../gifs/lyy2.gif", mfun: horizontal_mfun},
+        {row: 1, col: 3, path: "../gifs/333.gif", mfun: default_mfun},
+        {row: 2, col: 1, path: "../gifs/332.gif", mfun: default_mfun},
+        {row: 2, col: 2, path: "../gifs/lyy1.gif", mfun: horizontal_mfun},
+        {row: 2, col: 3, path: "../gifs/lyy3.gif", mfun: vertical_mfun},
+        {row: 3, col: 1, path: "../gifs/wt4.gif", mfun: vertical_mfun},
+        {row: 3, col: 2, path: "../gifs/331.gif", mfun: vertical_mfun},
+        {row: 3, col: 3, path: "../gifs/wt1.gif", mfun: vertical_mfun}
+    ];
+    Rbln.curr_mouse_rowcol = {
+        row: 0,
+        col: 0
     };
 
     function GetDivId(row, col) {
         return "#r"+row+col;
     }
-    
+
     function CreateGifController(gif_data, window_w, window_h) {
         var divid = GetDivId(gif_data.row, gif_data.col);
         var imgid = divid+"img";
@@ -80,20 +104,10 @@
             var moveY = e.clientY;
             for (i=0;i<Rbln.gifdata.length;i++) {
                 var g = Rbln.gifdata[i];
-                if (g.controller && 
+                if (g.controller &&
                     g.row === Rbln.curr_mouse_rowcol.row &&
                     g.col === Rbln.curr_mouse_rowcol.col) {
-                    var giflen = g.controller.get_length();
-                    var f = 0;
-                    if (g.row > g.col) {
-                        f = giflen * (1 - moveX / window_w);
-                    } else if (g.row < g.col) {
-                        f = giflen * (1 - moveY / window_h);
-                    } else {
-                        f = giflen * (1 - Math.sqrt(moveX * moveY / window_w / window_h));
-                    }
-                    g.controller.move_to(f);
-                    g.controller.pause();
+                    g.mfun(g, moveX, moveY, window_w, window_h);
                 }
             }
         }
