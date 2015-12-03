@@ -21,7 +21,7 @@
     };
     var vertical_mfun = function(g, moveX, moveY, maxX, maxY) {
         var giflen = g.controller.get_length();
-        var f = giflen * (1 - moveX / maxX);
+        var f = giflen * (1 - moveY / maxY);
         g.controller.move_to(f);
         g.controller.pause();
     };
