@@ -19,7 +19,7 @@ title: Chang Gao
 #  Chloe Gao ITP
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://chloechanggao.github.io" # the base hostname & protocol for your site
-github_username:  chloechanggao
+#github_username:  chloechanggao
 
 # Build settings
 markdown: kramdown
