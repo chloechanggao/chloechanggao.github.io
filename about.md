@@ -4,4 +4,4 @@ title: About
 permalink: /about/
 ---
 
-Chloe Gao ITP 2016
+ITP Class of 2018
