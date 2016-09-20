@@ -15,8 +15,8 @@
 # in the templates via {{ site.myvariable }}.
 title: Chloe Gao
 email: chloe.changgao@gmail.com
-description: > # this means to ignore newlines until "baseurl:"
-  Chloe Gao ITP
+#description: > # this means to ignore newlines until "baseurl:"
+#  Chloe Gao ITP
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://chloechanggao.github.io" # the base hostname & protocol for your site
 github_username:  chloechanggao
