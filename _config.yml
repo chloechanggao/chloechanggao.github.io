@@ -13,8 +13,8 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: Chloe Gao
-email: chloe.changgao@gmail.com
+title: Chang Gao
+#email: chloe.changgao@gmail.com
 #description: > # this means to ignore newlines until "baseurl:"
 #  Chloe Gao ITP
 baseurl: "" # the subpath of your site, e.g. /blog
