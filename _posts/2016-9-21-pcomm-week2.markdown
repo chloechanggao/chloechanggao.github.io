@@ -10,4 +10,4 @@ Last week we start to learn how to create simple circuit using the Arduino Uno d
 
 ![w2_p1](/pics/pcomm_w2_2.jpg)
 
-![w2_p1](https://lh6.googleusercontent.com/OCrCHiR7B3ZWV8jPG1KpY6CjW53LSYkr7UczdgW6S4xIghzj1Dujv7jUDGVh5gIYUmDDHIB-_DnG8Do=w1920-h1080-n-k-rw)
+<iframe width="420" height="315" src="https://lh6.googleusercontent.com/OCrCHiR7B3ZWV8jPG1KpY6CjW53LSYkr7UczdgW6S4xIghzj1Dujv7jUDGVh5gIYUmDDHIB-_DnG8Do=w1920-h1080-n-k-rw" frameborder="0" allowfullscreen></iframe>
