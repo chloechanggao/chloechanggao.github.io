@@ -5,6 +5,11 @@ date:   2016-09-20 03:58:25 +0000
 categories: ITP ICM
 ---
 ![w2_p1](/pics/icm_w3_1.gif)
+
+
 ![w2_p1](/pics/icm_w3_2.gif)
 
 <iframe src="https://itp.cgao.me/icm/w3_v1/" width="800" height="800" frameBorder="0"></iframe>
+
+To play with the design please go to https://itp.cgao.me/icm/w3_v1/ Hit advanced and comfirm to go to this address :)
+
