@@ -20,7 +20,7 @@ function setup() {
   createCanvas(500, 500);
   canvas = createGraphics(200, 200);
   frameRate(30);
- //capture.hide();
+  capture.hide();
   capture = createCapture(VIDEO);
   w = width / 2;
   l = height / 2;
