@@ -4,7 +4,10 @@ title:  "Week3 linkNYC Observation"
 date:   2016-09-28 14:58:25 +0000
 categories: ITP pcomp
 ---
+linkNYC Observation
 
+
+![w2_p1](/pics/pcomp_w4.png)
 
 LinkNYC is a public WIFI station that provide fast Wifi connection on the street. You can connect your own mobile device to the fast WIFI through LinkNYC on the street, such as your cell phone, ipad and desktop.
 
