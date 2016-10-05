@@ -19,6 +19,8 @@ Code of the Tone Output control Lab
 <iframe src="https://player.vimeo.com/video/185695930" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 
 
+Demo of the Electrical Piano!
+
 
 <iframe src="https://player.vimeo.com/video/185695929" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 
