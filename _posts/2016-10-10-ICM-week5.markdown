@@ -10,8 +10,10 @@ Move and click your mouse to play with the puzzle :)
 <iframe src="https://alpha.editor.p5js.org/embed/Byg24W5C" width="1200" height="900" frameBorder="0"></iframe>
 
 
+
+Here's the final result, did you get it right? :P
 ![w2_p1](/pics/icmhw.jpg)
 
-Here's the final result above, did you get it right? :P
+
 
 
