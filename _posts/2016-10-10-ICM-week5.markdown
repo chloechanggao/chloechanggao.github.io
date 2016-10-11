@@ -1,11 +1,11 @@
 ---
 layout: post
-title:  "Week5 Pazzle Time"
+title:  "Week5 Puzzle Time"
 date:   2016-10-10 03:58:25 +0000
 categories: ITP ICM
 ---
 
-Move and click your mouse to play with the pazzle :) 
+Move and click your mouse to play with the puzzle :) 
 
 <iframe src="https://alpha.editor.p5js.org/embed/Byg24W5C" width="1200" height="900" frameBorder="0"></iframe>
 
