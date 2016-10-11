@@ -1,0 +1,17 @@
+---
+layout: post
+title:  "Week5 Pazzle Time"
+date:   2016-10-10 03:58:25 +0000
+categories: ITP ICM
+---
+
+Move and click your mouse to play with the pazzle :) 
+
+<iframe src="https://alpha.editor.p5js.org/projects/Byg24W5C" width="1200" height="900" frameBorder="0"></iframe>
+
+
+![w2_p1](/pics/icmhw.jpg)
+
+Here's the final result above, did you get it right? :P
+
+
