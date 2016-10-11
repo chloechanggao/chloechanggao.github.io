@@ -7,7 +7,7 @@ categories: ITP ICM
 
 Move and click your mouse to play with the pazzle :) 
 
-<iframe src="https://alpha.editor.p5js.org/projects/Byg24W5C" width="1200" height="900" frameBorder="0"></iframe>
+<iframe src="https://alpha.editor.p5js.org/embed/Byg24W5C" width="1200" height="900" frameBorder="0"></iframe>
 
 
 ![w2_p1](/pics/icmhw.jpg)
