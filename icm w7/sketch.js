@@ -74,7 +74,7 @@ function placeChar(pixel,chara){
 
 function highlight() {
   //this.style('padding', '180px');
-  this.style('color', '#ffe4ce');
+  this.style('color', '#d3b196');
   this.mouseOver(unhighlight);
 }
 
