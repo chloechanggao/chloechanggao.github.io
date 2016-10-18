@@ -74,11 +74,11 @@ function placeChar(pixel,chara){
 
 function highlight() {
   //this.style('padding', '180px');
-  this.style('color', 'pink');
+  this.style('color', '#bec7d6');
   this.mouseOver(unhighlight);
 }
 
 function unhighlight() {
   //this.style('padding', '180px');
-  this.style('color', '0');
+  this.style('color', '#bec7d6');
 }
