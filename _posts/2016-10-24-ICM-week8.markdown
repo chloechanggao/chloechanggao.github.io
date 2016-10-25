@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Week8 New York Times Special"
+title:  "Week8 New York Times Special Edition"
 date:   2016-10-24 03:58:25 +0000
 categories: ITP ICM
 ---
