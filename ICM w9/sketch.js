@@ -49,9 +49,9 @@ function draw() {
   var w = video.width;
   var h = video.height;
 
-  copy(video, w / 2, 0, 1, h, x, 0, 5, h);
+  copy(video, w / 2, 0, 1, h, x, 0, x + artworkPerYr[int(frameCount/5/30)%5]/100, h);
 
-  x = x+5;
+  x = x + artworkPerYr[int(frameCount/5/30)%5]/100;
   
   if(x>width){
     x = 0;
@@ -59,5 +59,3 @@ function draw() {
   }
 
 }
-
-//x + artworkPerYr[int(frameCount/5/30)%5]/100
