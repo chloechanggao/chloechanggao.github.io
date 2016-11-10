@@ -5,23 +5,24 @@ date:   2016-10-28 14:58:25 +0000
 categories: ITP pcomp
 ---
 
-![w2_p1](/pics/PCfinal_4.JPG)
 
+![w2_p1](/pics/PCfinal_4.JPG)
+<br/>
 
 ![w2_p1](/pics/PCfinal_3.JPG)
-
+<br/>
 
 ![w2_p1](/pics/PCFinal_1.JPG)
-
+<br/>
 
 ![w2_p1](/pics/PCFinal_2.JPG)
-
+<br/>
 
 ![w2_p1](/pics/pcfep_1.png)
-
+<br/>
 
 ![w2_p1](/pics/pcfep_2.png)
-
+<br/>
 
 
 
