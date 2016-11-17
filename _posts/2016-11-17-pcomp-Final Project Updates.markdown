@@ -5,7 +5,7 @@ date:   2016-11-17 14:58:25 +0000
 categories: ITP pcomp
 ---
 
-After struggling for a week and talk to tons of people, I decided to change a proach way to discussion of the topic of social media image. In my original idea I tends to give a solid opinion to my user that we should focus more on the real life instead of social media images, and after some thought I decided instead of giving a certain point of view myself , I would like to give a question to my user: what do you want your instagram looks like? 
+After struggling for a week and talk to tons of people, I decided to change a different approach direction to discuss the topic of social media image. In my original idea I tends to give a solid opinion to my user that we should focus more on the real life instead of social media images, and after some thoughts I decided instead of giving a certain point of view myself , I would like to give a question to my user: what do you want your instagram looks like? 
 
 
 It will still be the same setting: 
