@@ -23,12 +23,12 @@ The brief process will be like below:
 
 
 First activated the camera by stepping on the mat in front of the screen. 
-<imag>
-
 
 The material of the mat is Acrylic, attached with pressure sensor. When the user step on, it will light up, and turn on the camera and the lights on the mirror.
 ![w2_p1](/pics/fp_c.png)
 <br/>
+
+
 ![w2_p1](/pics/fp_d.png)
 <br/>
 
@@ -36,8 +36,12 @@ The material of the mat is Acrylic, attached with pressure sensor. When the user
 And then the screen will generate a sketch of the user, and then use clmtrackr to establish the facial tracking, which will generate a real-time mask, and underneath the mask will be the image/ video from my own imagery data set. 
 ![w2_p1](/pics/pics/fp_a.JPG)
 <br/>
+
+
 ![w2_p1](/pics/fp_f.png)
 <br/>
+
+
 
 There will be several touch button on the screen which the user can choose their own preference. And based on their choice the screen side will show different videos/Images and generate different mask effects. 
 
