@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Final Project Updates"
+title:  "Final Project Updates Part 2"
 date:   2016-11-30 14:58:25 +0000
 categories: ITP pcomp
 ---
