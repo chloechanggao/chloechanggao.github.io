@@ -4,6 +4,14 @@ title:  "Final Project Updates Part 2"
 date:   2016-11-30 14:58:25 +0000
 categories: ITP pcomp
 ---
+Same setting:
+
+
+![w2_p1](/pics/PCfinal_4.JPG)
+<br/>
+
+
+
 After giving it a thought how to distinguish whether it is a human being stand on the rug or not, I decided to use two small acrylic rug, and it will only activate the interaction when you put both of your feet on them.
 
 
