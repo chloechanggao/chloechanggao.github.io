@@ -1,11 +1,7 @@
 ---
 layout: default
+title: Ballroom
 ---
-
-<div class="home">  
-  
-  <h1 class="page-heading">Ballroom</h1>
-  
 
   
   
@@ -22,4 +18,3 @@ To play with the design please go to https://itp.cgao.me/icm/w3_v1/ Hit advanced
 
  
 
-</div>
