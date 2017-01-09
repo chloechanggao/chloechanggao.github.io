@@ -1,7 +1,6 @@
 ---
 layout: page
 title: Ballroom
-permalink: /Ballroom/
 ---
 
 ![w2_p1](/pics/icm_w3_1.gif)
