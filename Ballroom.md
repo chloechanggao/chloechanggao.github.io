@@ -4,7 +4,7 @@ layout: page
 ---
 
   
-  JavaScript | P5.js | Motion Detection 
+  JavaScript / P5.js / Motion Detection 
   
   
   
