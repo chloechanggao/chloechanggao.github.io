@@ -3,7 +3,7 @@ layout: page
 
 ---
 
-JavaScript | P5.js | Data Viz | HTML | CSS
+JavaScript / P5.js / Data Viz / HTML / CSS
 
 
 
