@@ -1,3 +1,8 @@
+---
+layout: page
+
+---
+
 ## [Ballroom](./p/ballroom.html)
 ## [Puzzle Time](./Puzzle Time.html)
 ## [Little Prince](./Little Prince.html)
