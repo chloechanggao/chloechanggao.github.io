@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "Chang Gao (Chloe)"
+title: "Projects"
 
 ---
 
