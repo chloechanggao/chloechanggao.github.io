@@ -1,9 +1,8 @@
 ---
 layout: page
+title: "Chang Gao (Chloe)"
 
 ---
-
-List of projects:
 
 ## [Ballroom](./p/ballroom.html)
 
