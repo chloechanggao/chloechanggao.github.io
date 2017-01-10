@@ -1,7 +1,8 @@
 ---
-layout: page
+layout: defualt
 
 ---
+
 
 ## [Ballroom](./p/ballroom.html)
 
