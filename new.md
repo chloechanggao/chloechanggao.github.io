@@ -3,6 +3,8 @@ layout: page
 
 ---
 
+List of projects:
+
 ## [Ballroom](./p/ballroom.html)
 
 ## [Puzzle Time](./Puzzle Time.html)
