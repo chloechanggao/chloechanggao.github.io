@@ -4,6 +4,7 @@ layout: default
 ---
 
 ![ballroom-bar](./pics/ballroom-bar.png)
+
 [Ballroom](./p/ballroom.html)
 
 [Puzzle Time](./p/puzzle.html)
