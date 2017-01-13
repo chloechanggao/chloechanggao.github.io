@@ -27,7 +27,7 @@ layout: default
             <a class="postArticle-title" href="{{ doc.url }}">{{ doc.title }}</a>
           </li>
         {% else %}
-           tags: {{ doc.tags }} <br/>
+           {{ doc.title }}'s tags: {{ doc.tags }} <br/>
         {% endif %}
       {% endfor %}
     </ul>
