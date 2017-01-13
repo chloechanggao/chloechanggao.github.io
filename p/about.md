@@ -5,6 +5,11 @@ permalink: /about/
 ---
 
 Portfolio:http://artsy.cgao.me/
+
+<br/>
+Instagram:https://www.instagram.com/chloe.ative/
+
+<br/>
 LinkedIn: https://www.linkedin.com/in/cchanggao?trk=nav_responsive_tab_profile
 
 
