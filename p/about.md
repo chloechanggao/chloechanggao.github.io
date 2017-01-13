@@ -4,11 +4,11 @@ title: About
 permalink: /about/
 ---
 
-Portfolio:http://artsy.cgao.me/
-<br/>
-Instagram:https://www.instagram.com/chloe.ative/
-<br/>
-LinkedIn: https://www.linkedin.com/in/cchanggao?trk=nav_responsive_tab_profile
+[Portfolio](http://artsy.cgao.me/)
+
+[Instagram](https://www.instagram.com/chloe.ative/)
+
+[LinkedIn](https://www.linkedin.com/in/cchanggao)
 
 
-ITP Class of 2018
+[ITP](http://tisch.nyu.edu/itp) Class of 2018
