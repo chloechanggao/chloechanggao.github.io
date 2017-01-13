@@ -26,11 +26,12 @@ layout: default
             {% endif %}
             <a class="postArticle-title" href="{{ doc.url }}">{{ doc.title }}</a>
           </li>
-          {% endif %}
-        {% endfor %}
-      </ul>
-    </div>
-
+        {% else %}
+           tags: {{ doc.tags }} <br/>
+        {% endif %}
+      {% endfor %}
+    </ul>
+  </div>
   <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | relative_url }}">via RSS</a></p>
 
 </div>
