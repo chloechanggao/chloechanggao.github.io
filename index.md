@@ -6,12 +6,12 @@ layout: default
 
 [Ballroom](./p/ballroom.html)
 
-[Puzzle Time](./Puzzle Time.html)
+[Puzzle Time](./p/puzzle.html)
 
-[Little Prince](./Little Prince.html)
+[Little Prince](./p/little-prince.html)
 
-[New York Times Special Edition](./New York Times Special Edition.html)
+[New York Times Special Edition](./p/nyt-special.html)
 
 [Female in MoMA: From 1915 - 2015](./p/female-in-moma.html)
 
-[Human In Mirror](./Human In Mirror.html)
+[Human In Mirror](./p/human-in-mirror.html)
