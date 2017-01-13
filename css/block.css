@@ -31,15 +31,15 @@
   .block {
     display: block;
     width: 25%;
-    margin-bottom: $leading;
-    font-family: $title-secondary-font;
+    // margin-bottom: $leading;
+    // font-family: $title-secondary-font;
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
 
-    @media (max-width: $screen-xs-max) {
-      width: 100%;
-    }
+    // @media (max-width: $screen-xs-max) {
+    //   width: 100%;
+    // }
   }
 
   li:nth-child(1).block {
@@ -48,13 +48,13 @@
     .postArticle-image {
       padding-top: 30%;
 
-      @media (max-width: $screen-xs-max) {
-        padding-top: 50%;
-      }
+      // @media (max-width: $screen-xs-max) {
+      //   padding-top: 50%;
+      // }
     }
 
     .postArticle-title {
-      font-size: $font-S;
+      // font-size: $font-S;
     }
   }
 
@@ -67,27 +67,27 @@
     }
 
     .postArticle-title {
-      font-size: $font-S;
+      // font-size: $font-S;
     }
 
-    @media (max-width: $screen-xs-max) {
-      width: 100%;
-    }
+    // @media (max-width: $screen-xs-max) {
+    //   width: 100%;
+    // }
   }
 
   li {
 
     .postArticle-title {
-      font-size: $font-XS;
+      // font-size: $font-XS;
       line-height: 1.5;
     }
   }
 
   .postArticle-wrapper {
     position: relative;
-    background: $white;
+    // background: $white;
     width: 100%;
-    padding-bottom: 2*$leading;
+    // padding-bottom: 2*$leading;
     box-shadow: 0 1px 4px rgba(0,0,0,.2);
 
     &:hover {
@@ -97,13 +97,13 @@
   }
 
   .postArticle a {
-    color: $black;
+    // color: $black;
     background: transparent;
   }
 
   .postArticle-title {
     display: block;
-    margin-top: 0.5*$leading;
+    // margin-top: 0.5*$leading;
     font-weight: 300;
   }
 
@@ -131,9 +131,9 @@
     transition-duration: .5s, .1s, .1s, .1s;
     transition-timing-function: cubic-bezier(.33,0,.2,1);
 
-    @media (max-width: $screen-xs-max) {
-      padding-top: 50%;
-    }
+    // @media (max-width: $screen-xs-max) {
+    //   padding-top: 50%;
+    // }
   }
 
   .block-postMeta {
