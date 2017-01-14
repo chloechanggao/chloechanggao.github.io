@@ -28,6 +28,9 @@ Based on the social filter they choose (Ep: popular, famous, rich, etc), differe
 ![w2_p1](/pics/him_p1.jpg)
 <br/>
 
+![w2_p1](/pics/him_ss.jpg)
+<br/>
+
 
 When the interaction finish, everything turn off while the mirror is on the other half of the screen the whole time during interaction.
 
