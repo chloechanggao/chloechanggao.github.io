@@ -14,6 +14,8 @@ JavaScript/ Facial Recognition(clmtrackr)/ OpenCV/ Real Time Image Processing
 Human In Mirror gives the user an experience to live the life they desire on Instagram.
 
 
+<iframe src="https://player.vimeo.com/video/200687144" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+
 
 What do you want you Instagram look like? Are we really who we are on social media network? Human In Mirror will give the user a special interaction experience on the social media concept. The interaction starts when user stand on the acrylic rugs.
 
