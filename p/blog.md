@@ -4,4 +4,4 @@ title: Blog
 permalink: /blog/
 ---
 
-[Always On Always Connected](https://itp.cgao.me/p/blog/AlwaysOnAlwaysConnected）
+[Always On Always Connected]（https://itp.cgao.me/p/blog/AlwaysOnAlwaysConnected）
