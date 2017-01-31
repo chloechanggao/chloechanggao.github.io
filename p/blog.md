@@ -6,7 +6,7 @@ permalink: /blog/
 
 
 
-[World On Wire: Narrative Storytelling in VR](http://itp.cgao.me/blog/AlwaysOnAlwaysConnected)
+[World On Wire: Narrative Storytelling in VR](http://itp.cgao.me/blog/AlwaysOnAlwaysConnected.md)
 
 
 
