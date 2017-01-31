@@ -7,4 +7,4 @@ permalink: /blog/
 
 
 
-[Always On Always Connected](http://artsy.cgao.me/p/blog/AlwaysOnAlwaysConnected)
+[Always On Always Connected](http://itp.cgao.me/blog/AlwaysOnAlwaysConnected)
