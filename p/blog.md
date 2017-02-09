@@ -8,15 +8,8 @@ permalink: /blog/
 
 
 
-[World On Wire: Narrative Storytelling in VR](http://itp.cgao.me/blog/WorldsOnWire_NarrativeStorytellinginVR.html)
+[World On Wire: Narrative Storytelling in VR](http://itp.cgao.me/p/courses/wow.html)
 
 
 
-[Light Interactivity](http://itp.cgao.me/blog/LightInteractivity.html)
-
-
-
-[Always On Always Connected](http://itp.cgao.me/blog/AlwaysOnAlwaysConnected.html)
-
-
-
+[Always On Always Connected](http://itp.cgao.me/p/courses/aoac.html)

@@ -6,7 +6,7 @@ JavaScript / Seriously.js / Data Viz / HTML / CSS / Premiere / Real Life Image
 
 
 
-<iframe src="http://itp.cgao.me/icm/ICM w9/" width="1000" height="800" frameBorder="0"></iframe>
+<iframe src="http://itp.cgao.me/code/itp/icm/w9/" width="1000" height="800" frameBorder="0"></iframe>
 
 
 The idea for this project is to use the data from MoMA collection to find out how many female artists' artworks has been exhibited in the past centry. I divided the data to 5 groups:
@@ -26,7 +26,7 @@ The visualization part is inspired by the tutorial video flit-scan. Instead of u
 
 <br/>
 
-Edited video(Originally from Artsy's officila vimeo account): 
+Edited video(Originally from Artsy's officila vimeo account):
 <br/>
 <iframe src="https://player.vimeo.com/video/189744027" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 <br/>
