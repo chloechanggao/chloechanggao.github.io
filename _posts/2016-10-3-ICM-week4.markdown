@@ -1,0 +1,12 @@
+---
+layout: post
+title:  "Week4"
+date:   2016-10-03 03:58:25 +0000
+categories: ITP ICM
+---
+
+Click mouse to play with the design :) 
+
+<iframe src="https://alpha.editor.p5js.org/embed/rJnqmHgC" width="800" height="500" frameBorder="0"></iframe>
+
+
