@@ -12,4 +12,8 @@ permalink: /blog/
 
 
 
+[Magic Windows And Mixed Up Realities](http://itp.cgao.me/p/courses/wow.html)
+
+
+
 [Always On Always Connected](http://itp.cgao.me/p/courses/aoac.html)
