@@ -12,7 +12,7 @@ permalink: /blog/
 
 
 
-[Magic Windows And Mixed Up Realities](http://itp.cgao.me/p/courses/wow.html)
+[Magic Windows And Mixed Up Realities](http://itp.cgao.me/p/courses/mw.html)
 
 
 
