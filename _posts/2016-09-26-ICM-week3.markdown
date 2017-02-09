@@ -11,5 +11,4 @@ categories: ITP ICM
 
 
 
-To play with the design please go to https://itp.cgao.me/icm/w3_v1/ Hit advanced and comfirm to go to this address :)
-
+To play with the design please go to https://itp.cgao.me/icm/w3_v1/ Hit advanced and confirm to go to this address :)
