@@ -17,6 +17,8 @@ The Plot of the story is based on forest, so I choose a planet as the target pat
 ![S17](/pics/S17_MW_w2.JPG)
 
 
+![S17](/pics/S17_MW_w202.png)
+
 
 And then I imported the animation to Unity and reorganize the movement of the elf charactor to make it more suitable for the setting of a book.
 After select the image target and active the dataset I imported the Camera Focuse script, and the last thing is to see the magic pop book. 
