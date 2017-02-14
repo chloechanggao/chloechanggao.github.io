@@ -1,0 +1,42 @@
+---
+layout: post
+title:  "The Sktech For APP"
+date:   2017-02-13 14:58:25 +0000
+categories: ITP AOAC
+---
+
+This week I started to play with the JQuery in Cordova to build the APP interface. 
+
+![S17](/pics/S17_aoac_105.png)
+
+
+![S17](/pics/S17_aoac_106.png)
+
+
+And JQuery is certainly convinience and simple in certain way.
+
+
+
+![S17](/pics/S17_aoac_107.png)
+
+
+For my own App I am still struggling between the ideas of build a super useful App or a supper useless App. 
+I always want to build a TODO list App since all the current TODO list app in the market are way more complicated to use. But how to storage the data has been concerned me.
+Here is a App I find very inspiring because of its simplicity and minimalism style: 
+
+
+![S17](/pics/S17_aoac.png)
+
+
+![S17](/pics/S17_aoac_102.png)
+
+
+![S17](/pics/S17_aoac_103.png)
+
+This App is called Ricepo, It's an Asian food deliver App. Different from traditional food related Apps, it does not have any pictures, 
+it only has the name of the food, and a ranking of popularity. I like to use it because it efficiently reduce the time I am spending on the App and get my food way more faster.
+
+
+
+
+
