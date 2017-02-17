@@ -32,4 +32,6 @@ AFTER:
 
 ![S17](/pics/S17-SMMM-w301.jpg)
 
+And the link to the code is here: https://github.com/chloechanggao/chloechanggao.github.io/tree/master/code/itp/S17/PATHWAY-01
+
 
