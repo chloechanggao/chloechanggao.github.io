@@ -26,10 +26,10 @@ Here's the comparison of the before and after diagram：
 
 BEFORE:
 
-![S17](/pics/S17-SMMM-w302.png)
+![S17](/pics/S17-SMMM-w302.JPG)
 
 AFTER:
 
-![S17](/pics/S17-SMMM-w301.png)
+![S17](/pics/S17-SMMM-w301.jpg)
 
 
