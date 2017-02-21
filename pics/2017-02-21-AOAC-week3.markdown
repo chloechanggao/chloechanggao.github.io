@@ -1,0 +1,34 @@
+---
+layout: post
+title:  "Fragment Time APP Sketch Mock Up & Location Mapping"
+date:   2017-02-21 14:58:25 +0000
+categories: ITP AOAC
+---
+
+This week me and Qiao start to work on the sketch mock up on our Fragment Time App. Here's the wireframe sketch:
+
+![S17](/pics/S17_aoac_w301.png)
+
+
+And we have mock up 2 pages based on the sketch. 
+
+![S17](/pics/S17_aoac_w302.png)
+
+
+![S17](/pics/S17_aoac_w303.png)
+
+We use the url as the content for page three. But the format is not quite ideal. 
+And we are still figuring it out by explore both Jquery format setting and also the javescript. 
+
+
+![S17](/pics/S17_aoac_w304.png)
+
+
+Right now there's a bug I can not fix, the work flow can only work once from page 2 to page 3, 
+when I go back from page 3 to page 2, the on click did not work anymore.
+
+For the location mapping I successfully located the location of Apple store on the simulator. 
+
+
+![S17](/pics/S17_aoac_w305.PNG)
+
