@@ -1,0 +1,30 @@
+---
+layout: post
+title:  "Tango Expierence"
+date:   2017-02-10 14:58:25 +0000
+categories: ITP MW
+---
+
+![S17](/pics/MW_week501.jpg)
+
+
+This week we experienced Google Tango. I build the ball model from tilt brush and then imported them into unity, use them as objects. 
+
+
+![S17](/pics/MW_week504.jpg)
+
+![S17](/pics/MW_week502.jpg)
+
+The interaction of this project is straight and simple with the tango kitten library. Users can tab on any surface on the screen and then there will appear a cat. 
+
+<iframe src="https://player.vimeo.com/video/205561145" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+
+The movements of the ball are designed within a pathway. And each ball has been assigned with different destination-point oder.   
+
+<iframe src="https://player.vimeo.com/video/205561133" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+
+
+The kitten and the ball create a delightful interaction with each other and since it is what really happen in our everyday life, it’s easy to evoke users’ sympathy. 
+
+![S17](/pics/MW_week503.JPG)
+
