@@ -16,8 +16,8 @@ Similar to the immersive play Sleep No More, users have the right to choose diff
 In this project, I’ll mainly in charge of study the Tilt Brush SDK Library to find an new and interesting way to narrative the story, combine real world and the virtual world to explore a different way to interact with viewers. 
 For example, in the tilt brush SDK library, there’s a section about teleport and custom trigger, I’m planning to design a virtual element (such as blooming box) in a real-life environment, and then set it as the custom trigger to a virtual reality world. Meanwhile, there will be a custom trigger in the virtual reality world which can send the viewer back to reality world.
 
-![S17](/pics/S17-MW-fp02.jpg)
+![S17](/pics/S17-MW-fp02.png)
 
-![S17](/pics/S17-MW-fp03.jpg)
+![S17](/pics/S17-MW-fp03.png)
 
 And the storyline is generated in both reality world and the virtual reality world :)
