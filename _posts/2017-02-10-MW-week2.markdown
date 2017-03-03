@@ -6,9 +6,7 @@ categories: ITP MW
 ---
 
 
-This week we are using Unity and Vuforia to Expierence the AR world. 
-I am always facinated with books ever since I was littel, therefore I natually start to wonder how to combine ready together with the AR magic.
-Since I created a little Unity story last semester, I think it would be interesting if I can combine this animation story together with the real-book.
+This week we are using Unity and Vuforia to Experience the AR world. I am always fascinated with books ever since I was little, therefore I naturally start to wonder how to combine story together with the AR magic. Since I created a little Unity story last semester, I think it would be interesting if I can combine this animation story together with the real-book.
 
 The Plot of the story is based on forest, so I choose a planet as the target pattern dataset. 
 
@@ -20,8 +18,9 @@ The Plot of the story is based on forest, so I choose a planet as the target pat
 ![S17](/pics/S17_MW_w202.png)
 
 
-And then I imported the animation to Unity and reorganize the movement of the elf charactor to make it more suitable for the setting of a book.
-After select the image target and active the dataset I imported the Camera Focuse script, and the last thing is to see the magic pop book. 
+The Plot of the story is based on forest, so I choose a planet as the target pattern dataset. 
+And then I imported the animation to Unity and reorganize the movement of the elf character to make it more suitable for the setting of a book. After select the image target and active the dataset I imported the Camera Focus script, and the last thing is to see the magic pop book.
+ 
 
 
 <iframe src="https://player.vimeo.com/video/203759355" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
