@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Afterlife of Nice People"
-date:   2017-03-08 14:58:25 +0000
+date:   2017-03-22 14:58:25 +0000
 categories: ITP WOW
 ---
 
