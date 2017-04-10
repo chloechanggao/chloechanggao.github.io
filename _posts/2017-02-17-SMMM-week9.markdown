@@ -25,6 +25,8 @@ Second one is use Tango(or HoloLens) and Unity, Create AR elements, and guide th
 ![S17](/pics/S17-SMMMf3.GIF)
 
 
+Previous example of how does the AR objects looks like in Tango:
+
 ![S17](/pics/S17-woaw-mt4.GIF)
 
 
