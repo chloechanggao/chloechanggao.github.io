@@ -1,0 +1,26 @@
+---
+layout: post
+title:  "Final Project Propsal"
+date:   2017-04-10 14:58:25 +0000
+categories: ITP SMMM
+---
+
+
+The main goal for this project is to create magic feelings. Try to catch or reach something you can not get while still enjoy the process of approaching it. 
+
+
+I have two ways that I want to explore :
+First one is use screen and the kinect, create a sketch on the screen and detect the movement of user’s hand and contour.
+
+
+![S17](/pics/S17-SMMMf2.JPG)
+
+![S17](/pics/S17-SMMMf1.GIF)
+
+
+Second one is use Tango(or HoloLens) and Unity, Create AR elements, and guide the user to explore the entire space. 
+
+
+![S17](/pics/S17-woaw-mt4.GIF)
+
+
