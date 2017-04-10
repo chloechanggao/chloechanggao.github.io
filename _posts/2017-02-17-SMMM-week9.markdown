@@ -15,10 +15,14 @@ First one is use screen and the kinect, create a sketch on the screen and detect
 
 ![S17](/pics/S17-SMMMf2.JPG)
 
+Sketch Example:
+
 ![S17](/pics/S17-SMMMf1.GIF)
 
 
 Second one is use Tango(or HoloLens) and Unity, Create AR elements, and guide the user to explore the entire space. 
+
+![S17](/pics/S17-SMMMf3.GIF)
 
 
 ![S17](/pics/S17-woaw-mt4.GIF)
