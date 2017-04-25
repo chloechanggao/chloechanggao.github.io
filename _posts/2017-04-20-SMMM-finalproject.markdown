@@ -9,22 +9,15 @@ categories: ITP SMMM
 
 Design Of the Paper Plane:
 
-![S17](/pics/paperplane1.JPG)
+
+| ![S17](/pics/paperplane1.JPG) | ![S17](/pics/paperplane2.JPG) |
 
 
-![S17](/pics/paperplane2.JPG)
+| ![S17](/pics/paperplane3.JPG) | ![S17](/pics/paperplane4.png) |
 
-
-![S17](/pics/paperplane2.JPG)
-
-
-
-Code:
-
-
-![S17](/pics/paperplane4.png)
 
 
 When the user experience it in a screen, their hands will replace the mouse connected by the Kinectron. 
+
 
 ![S17](/pics/paperplane5.GIF)
