@@ -10,10 +10,10 @@ categories: ITP SMMM
 Design Of the Paper Plane:
 
 
-| ![S17](/pics/paperplane1.JPG) | ![S17](/pics/paperplane2.JPG) |
+| ![S17](/pics/paperplane1.JPG) | ![S17](/pics/paperplane02.jpg) |
 
 
-| ![S17](/pics/paperplane03.jpg) | ![S17](/pics/paperplane4.png) |
+| ![S17](/pics/paperplane03.jpg) | ![S17](/pics/paperplane04.jpg) |
 
 
 
