@@ -6,4 +6,6 @@ categories: ITP SMMM
 ---
 
 
-<iframe src="https://chang-itp.github.io/kinectron/IP/" width="1000" height="800" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+<iframe src="https://chang-itp.github.io/kinectron/IP/" width="800" height="600" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+
+
