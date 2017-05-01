@@ -1,0 +1,15 @@
+---
+layout: post
+title:  "Second Chance"
+date:   2017-05-1 14:58:25 +0000
+categories: ITP MW
+---
+<style>
+.responsive-wrap iframe{ max-width: 100%;}
+</style>
+<div class="responsive-wrap">
+<!-- this is the embed code provided by Google -->
+<iframe src="https://docs.google.com/presentation/d/15blnbwSqlfIn1htfEpeJ8QKoesBR01UoMnnL2pvawsQ/embed?start=false&loop=false&delayms=3000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+<!-- Google embed ends -->
+</div>
+
