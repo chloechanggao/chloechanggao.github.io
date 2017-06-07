@@ -149,8 +149,8 @@ function onWindowResize() {
 function onDocumentMouseMove(event) {
     //var vector = new THREE.Vector3(event.clientX - SCREEN_WIDTH_HALF, -event.clientY + SCREEN_HEIGHT_HALF, 0);
     var time = Date.now() * 0.005;
-    // uniforms.amplitude.value = 1.2 + Math.sin(time * 0.4);
-		console.log(uniforms.amplitude.value);
+    uniforms.amplitude.value = 1.2 + Math.sin(time * 0.4);
+    console.log(uniforms.amplitude.value);
 
 }
 
@@ -165,10 +165,13 @@ function animate() {
 }
 
 function render() {
-
-    var time = Date.now() * 0.005;
-    uniforms.amplitude.value = 1.2 + Math.sin(time * 0.4);
-    controls.update();
+    if (onDocumentMouseMove = false) {
+        var time = Date.now() * 0.005;
+        uniforms.amplitude.value = 1.2 + Math.sin(time * 0.4);
+				controls.update();
+    }else {
+    	controls.update();
+    }
 
     renderer.render(scene, camera);
 
