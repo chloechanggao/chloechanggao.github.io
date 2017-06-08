@@ -146,31 +146,36 @@ function onWindowResize() {
 
 }
 
+//onDocumentMouseMove = false;
+var mouseMoving = false;
+
 function onDocumentMouseMove(event) {
     //var vector = new THREE.Vector3(event.clientX - SCREEN_WIDTH_HALF, -event.clientY + SCREEN_HEIGHT_HALF, 0);
     var time = Date.now() * 0.005;
     uniforms.amplitude.value = 1.2 + Math.sin(time * 0.4);
+    mouseMoving = true;
     console.log(uniforms.amplitude.value);
-
+    console.log("mouse moving " + mouseMoving);
 }
 
+
+
+
 function animate() {
-
     requestAnimationFrame(animate);
-
     render();
-
     stats.update();
 
 }
 
 function render() {
-    if (onDocumentMouseMove = false) {
+    console.log("mouse moving " + mouseMoving);
+    if (!mouseMoving) {
         var time = Date.now() * 0.005;
         uniforms.amplitude.value = 1.2 + Math.sin(time * 0.4);
-				controls.update();
-    }else {
-    	controls.update();
+        controls.update();
+    } else {
+        controls.update();
     }
 
     renderer.render(scene, camera);
