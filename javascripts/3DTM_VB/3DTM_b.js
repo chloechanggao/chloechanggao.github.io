@@ -154,7 +154,7 @@ function onDocumentMouseMove(event) {
     // var time = Date.now() * 0.005;
     // uniforms.amplitude.value = 1.2 + Math.sin(time * 0.4);
     var mouseX = ( event.clientX / window.innerWidth ) * 2 - 1;
-    var x = THREE.Math.mapLinear(mouseX, -WIDTH, WIDTH, 0.2, 10);
+    var x = THREE.Math.mapLinear(mouseX, 0, 150, 0.2, 2000);
     uniforms.amplitude.value = x;
     mouseMoving = true;
     console.log(uniforms.amplitude.value);
