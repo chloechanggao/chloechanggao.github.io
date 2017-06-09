@@ -30,7 +30,7 @@ function init(font) {
 
         font: font,
 
-        size: 27,
+        size: 40,
         height: 5,
         curveSegments: 3,
 
@@ -50,8 +50,8 @@ function init(font) {
 
     }
 
-    var explodeModifier = new THREE.ExplodeModifier();
-    explodeModifier.modify(geometry);
+    // var explodeModifier = new THREE.ExplodeModifier();
+    // explodeModifier.modify(geometry);
 
     var numFaces = geometry.faces.length;
 
@@ -98,7 +98,7 @@ function init(font) {
     uniforms = {
 
         amplitude: {
-            value: 10.0
+            value: 1.0
         }
 
     };
@@ -150,12 +150,15 @@ function onWindowResize() {
 var mouseMoving = false;
 
 function onDocumentMouseMove(event) {
-    //var vector = new THREE.Vector3(event.clientX - SCREEN_WIDTH_HALF, -event.clientY + SCREEN_HEIGHT_HALF, 0);
-    var time = Date.now() * 0.005;
-    uniforms.amplitude.value = 1.2 + Math.sin(time * 0.4);
+
+    // var time = Date.now() * 0.005;
+    // uniforms.amplitude.value = 1.2 + Math.sin(time * 0.4);
+    var mouseX = ( event.clientX / window.innerWidth ) * 2 - 1;
+    var x = THREE.Math.mapLinear(mouseX, -WIDTH, WIDTH, 0.2, 10);
+    uniforms.amplitude.value = x;
     mouseMoving = true;
     console.log(uniforms.amplitude.value);
-    console.log("mouse moving " + mouseMoving);
+    //console.log("mouse moving " + mouseMoving);
 }
 
 
