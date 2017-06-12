@@ -1,8 +1,8 @@
 if (!Detector.webgl) Detector.addGetWebGLMessage();
 
-var renderer, scene, camera, stats;
+var renderer, scene, camera, stats, controls;
 
-var mesh, uniforms;
+var mesh, uniforms, geometry;
 
 var WIDTH = window.innerWidth,
     HEIGHT = window.innerHeight;
@@ -26,7 +26,7 @@ function init(font) {
 
     //
 
-    var geometry = new THREE.TextGeometry("Outernets", {
+    geometry = new THREE.TextGeometry("Outernets", {
 
         font: font,
 
@@ -96,11 +96,12 @@ function init(font) {
     //
 
     uniforms = {
-
         amplitude: {
             value: 1.0
+        },
+        stimu: {
+            value: [0,0,0]
         }
-
     };
 
     var shaderMaterial = new THREE.ShaderMaterial({
@@ -123,7 +124,7 @@ function init(font) {
     renderer.setClearColor(0xC1CDCD);
     renderer.setPixelRatio(window.devicePixelRatio);
     renderer.setSize(WIDTH, HEIGHT);
-    document.addEventListener('mousemove', onDocumentMouseMove, false);
+    document.addEventListener('mousemove', onMouseMove, false);
 
     var container = document.getElementById('container');
     container.appendChild(renderer.domElement);
@@ -147,17 +148,26 @@ function onWindowResize() {
 }
 
 //onDocumentMouseMove = false;
-var mouseMoving = false;
+var mouseMoving = Date.now() - 3000;
 
-function onDocumentMouseMove(event) {
+function onMouseMove(e) {
 
     // var time = Date.now() * 0.005;
     // uniforms.amplitude.value = 1.2 + Math.sin(time * 0.4);
-    var mouseX = ( event.clientX / window.innerWidth ) * 2 - 1;
-    var x = THREE.Math.mapLinear(mouseX, 0, 150, 0.2, 2000);
-    uniforms.amplitude.value = x;
-    mouseMoving = true;
-    console.log(uniforms.amplitude.value);
+    var mouseX = e.clientX,
+        mouseY = e.clientY;
+    //console.log(mouseX, mouseY);
+    // change morph weight: 0 at 1
+    // names from modifier Morph of 3ds Max
+    //geometry.setWeight("ha", mouseX / window.innerWidth);
+    //geometry.setWeight("oh", mouseY / window.innerHeight);
+    //var mouseX = (event.clientX / window.innerWidth) * 2 - 1;
+    var x = THREE.Math.mapLinear(mouseX, 0, 1000, -100, 100);
+    var y = THREE.Math.mapLinear(mouseY, 0, 1000, -20, 20);
+    //uniforms.amplitude.value = x;
+    uniforms.stimu.value = [x,y,0];
+    mouseMoving = Date.now();
+    //console.log(uniforms.amplitude.value);
     //console.log("mouse moving " + mouseMoving);
 }
 
@@ -173,7 +183,7 @@ function animate() {
 
 function render() {
     console.log("mouse moving " + mouseMoving);
-    if (!mouseMoving) {
+    if (Date.now()- mouseMoving > 1250) {
         var time = Date.now() * 0.005;
         uniforms.amplitude.value = 1.2 + Math.sin(time * 0.4);
         controls.update();
