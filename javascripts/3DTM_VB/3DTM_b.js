@@ -15,6 +15,8 @@ loader.load('shared/helvetiker_bold.typeface.json', function(font) {
 
 });
 
+
+
 function init(font) {
 
     camera = new THREE.PerspectiveCamera(40, WIDTH / HEIGHT, 1, 10000);
@@ -23,6 +25,28 @@ function init(font) {
     controls = new THREE.TrackballControls(camera);
 
     scene = new THREE.Scene();
+
+//debug
+    // var sgeometry = new THREE.SphereGeometry( 20, 32, 50 );
+    // var smaterial = new THREE.MeshStandardMaterial( {color: 0xffff00} );
+    // var sphere = new THREE.Mesh( sgeometry, smaterial );
+    // scene.add( sphere );
+
+    //light
+
+
+    var light = new THREE.HemisphereLight(0x00ff00, 0xff0000, 1.0);
+    light.position.set(0, 0, 75);
+    scene.add(light);
+
+    // var light = new THREE.DirectionalLight(0xefefff, 1);
+    // light.position.set(1, 1, 1).normalize();
+    // scene.add(light);
+    // var light = new THREE.DirectionalLight(0xffefef, 1);
+    // light.position.set(-1, -1, -1).normalize();
+    // scene.add(light);
+
+
 
     //
 
@@ -100,9 +124,14 @@ function init(font) {
             value: 1.0
         },
         stimu: {
-            value: [0,0,0]
-        }
+            value: [0, 0, 0]
+        },
+        lightpos: {
+            value: [0, 0, 10]
+        },
+
     };
+
 
     var shaderMaterial = new THREE.ShaderMaterial({
 
@@ -152,20 +181,13 @@ var mouseMoving = Date.now() - 3000;
 
 function onMouseMove(e) {
 
-    // var time = Date.now() * 0.005;
-    // uniforms.amplitude.value = 1.2 + Math.sin(time * 0.4);
     var mouseX = e.clientX,
         mouseY = e.clientY;
-    //console.log(mouseX, mouseY);
-    // change morph weight: 0 at 1
-    // names from modifier Morph of 3ds Max
-    //geometry.setWeight("ha", mouseX / window.innerWidth);
-    //geometry.setWeight("oh", mouseY / window.innerHeight);
-    //var mouseX = (event.clientX / window.innerWidth) * 2 - 1;
+
     var x = THREE.Math.mapLinear(mouseX, 0, 1000, -100, 100);
     var y = THREE.Math.mapLinear(mouseY, 0, 1000, -20, 20);
-    //uniforms.amplitude.value = x;
-    uniforms.stimu.value = [x,y,0];
+
+    uniforms.stimu.value = [x, y, 0];
     mouseMoving = Date.now();
     //console.log(uniforms.amplitude.value);
     //console.log("mouse moving " + mouseMoving);
@@ -182,8 +204,8 @@ function animate() {
 }
 
 function render() {
-    console.log("mouse moving " + mouseMoving);
-    if (Date.now()- mouseMoving > 1250) {
+    //console.log("mouse moving " + mouseMoving);
+    if (Date.now() - mouseMoving > 1250) {
         var time = Date.now() * 0.005;
         uniforms.amplitude.value = 1.2 + Math.sin(time * 0.4);
         controls.update();
