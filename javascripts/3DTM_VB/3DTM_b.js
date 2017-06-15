@@ -1,3 +1,4 @@
+
 if (!Detector.webgl) Detector.addGetWebGLMessage();
 
 var renderer, scene, camera, stats, controls;
@@ -26,16 +27,18 @@ function init(font) {
 
     scene = new THREE.Scene();
 
-//debug
+    //debug
     // var sgeometry = new THREE.SphereGeometry( 20, 32, 50 );
     // var smaterial = new THREE.MeshStandardMaterial( {color: 0xffff00} );
     // var sphere = new THREE.Mesh( sgeometry, smaterial );
     // scene.add( sphere );
 
+    scene.fog = new THREE.FogExp2(0xefd1b5, 0.0025);
+
+    scene.fog.color.setHSL(0.6, 0, 1);
+
     //light
-
-
-    var light = new THREE.HemisphereLight(0x00ff00, 0xff0000, 1.0);
+    var light = new THREE.HemisphereLight(0xC896FA, 0xff0000, 1.0);
     light.position.set(0, 0, 75);
     scene.add(light);
 
@@ -92,9 +95,9 @@ function init(font) {
 
         var index = 9 * f;
 
-        var h = 0.2 * Math.random();
-        var s = 0.2 + 0.5 * Math.random();
-        var l = 0.7 + 0.5 * Math.random();
+        var h = 0.7 * Math.random();
+        var s = 0.2 + 0.5 * Math.random(); //0.7 + 0.5 * Math.random();
+        var l = 0.6 + 0.9 * Math.random();
 
         color.setHSL(h, s, l);
 
@@ -129,8 +132,13 @@ function init(font) {
         lightpos: {
             value: [0, 0, 10]
         },
+        bottomColor: {
+            value: new THREE.Color(0x2E2E2E)
+        },
 
     };
+
+    scene.fog.color.copy(uniforms.bottomColor.value);
 
 
     var shaderMaterial = new THREE.ShaderMaterial({
@@ -150,9 +158,10 @@ function init(font) {
     renderer = new THREE.WebGLRenderer({
         antialias: true
     });
-    renderer.setClearColor(0xC1CDCD);
+
     renderer.setPixelRatio(window.devicePixelRatio);
     renderer.setSize(WIDTH, HEIGHT);
+    renderer.setClearColor(scene.fog.color);
     document.addEventListener('mousemove', onMouseMove, false);
 
     var container = document.getElementById('container');
@@ -165,54 +174,52 @@ function init(font) {
 
     window.addEventListener('resize', onWindowResize, false);
 
-}
 
-function onWindowResize() {
+    function onWindowResize() {
 
-    camera.aspect = window.innerWidth / window.innerHeight;
-    camera.updateProjectionMatrix();
+        camera.aspect = window.innerWidth / window.innerHeight;
+        camera.updateProjectionMatrix();
 
-    renderer.setSize(window.innerWidth, window.innerHeight);
+        renderer.setSize(window.innerWidth, window.innerHeight);
 
-}
+    }
 
-//onDocumentMouseMove = false;
-var mouseMoving = Date.now() - 3000;
+    //onDocumentMouseMove = false;
+    var mouseMoving = Date.now() - 3000;
 
-function onMouseMove(e) {
+    function onMouseMove(e) {
 
-    var mouseX = e.clientX,
-        mouseY = e.clientY;
+        var mouseX = e.clientX,
+            mouseY = e.clientY;
 
-    var x = THREE.Math.mapLinear(mouseX, 0, 1000, -100, 100);
-    var y = THREE.Math.mapLinear(mouseY, 0, 1000, -20, 20);
+        var x = THREE.Math.mapLinear(mouseX, 0, 1000, -100, 100);
+        var y = THREE.Math.mapLinear(mouseY, 0, 1000, -20, 20);
 
-    uniforms.stimu.value = [x, y, 0];
-    mouseMoving = Date.now();
-    //console.log(uniforms.amplitude.value);
-    //console.log("mouse moving " + mouseMoving);
-}
-
+        uniforms.stimu.value = [x, y, 0];
+        mouseMoving = Date.now();
+        //console.log(uniforms.amplitude.value);
+        //console.log("mouse moving " + mouseMoving);
+    }
 
 
 
-function animate() {
-    requestAnimationFrame(animate);
-    render();
-    stats.update();
 
-}
+    function animate() {
+        requestAnimationFrame(animate);
+        render();
+        stats.update();
 
-function render() {
-    //console.log("mouse moving " + mouseMoving);
-    if (Date.now() - mouseMoving > 1250) {
-        var time = Date.now() * 0.005;
-        uniforms.amplitude.value = 1.2 + Math.sin(time * 0.4);
-        controls.update();
-    } else {
-        controls.update();
     }
 
     renderer.render(scene, camera);
-
-}
+    function render() {
+        //console.log("mouse moving " + mouseMoving);
+        if (Date.now() - mouseMoving > 1250) {
+            var time = Date.now() * 0.005;
+            uniforms.amplitude.value = 1.2 + Math.sin(time * 0.4);
+            controls.update();
+        } else {
+            controls.update();
+        }
+      }
+    }
