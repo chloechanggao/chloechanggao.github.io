@@ -1,4 +1,3 @@
-
 if (!Detector.webgl) Detector.addGetWebGLMessage();
 
 var renderer, scene, camera, stats, controls;
@@ -15,7 +14,6 @@ loader.load('shared/helvetiker_bold.typeface.json', function(font) {
     animate();
 
 });
-
 
 
 function init(font) {
@@ -173,53 +171,55 @@ function init(font) {
     //
 
     window.addEventListener('resize', onWindowResize, false);
+}
+
+function onWindowResize() {
+
+    camera.aspect = window.innerWidth / window.innerHeight;
+    camera.updateProjectionMatrix();
+
+    renderer.setSize(window.innerWidth, window.innerHeight);
+
+}
+
+//onDocumentMouseMove = false;
+var mouseMoving = Date.now() - 3000;
+
+function onMouseMove(e) {
+
+    var mouseX = e.clientX,
+        mouseY = e.clientY;
+
+    var x = THREE.Math.mapLinear(mouseX, 0, 1000, -100, 100);
+    var y = THREE.Math.mapLinear(mouseY, 0, 1000, -20, 20);
+
+    uniforms.stimu.value = [x, y, 0];
+    mouseMoving = Date.now();
+    //console.log(uniforms.amplitude.value);
+    //console.log("mouse moving " + mouseMoving);
+}
 
 
-    function onWindowResize() {
 
-        camera.aspect = window.innerWidth / window.innerHeight;
-        camera.updateProjectionMatrix();
 
-        renderer.setSize(window.innerWidth, window.innerHeight);
 
+function animate() {
+    requestAnimationFrame(animate);
+    render();
+    stats.update();
+
+}
+
+
+
+function render() {
+    //console.log("mouse moving " + mouseMoving);
+    if (Date.now() - mouseMoving > 1250) {
+        var time = Date.now() * 0.005;
+        uniforms.amplitude.value = 1.2 + Math.sin(time * 0.4);
+        controls.update();
+    } else {
+        controls.update();
     }
-
-    //onDocumentMouseMove = false;
-    var mouseMoving = Date.now() - 3000;
-
-    function onMouseMove(e) {
-
-        var mouseX = e.clientX,
-            mouseY = e.clientY;
-
-        var x = THREE.Math.mapLinear(mouseX, 0, 1000, -100, 100);
-        var y = THREE.Math.mapLinear(mouseY, 0, 1000, -20, 20);
-
-        uniforms.stimu.value = [x, y, 0];
-        mouseMoving = Date.now();
-        //console.log(uniforms.amplitude.value);
-        //console.log("mouse moving " + mouseMoving);
-    }
-
-
-
-
-    function animate() {
-        requestAnimationFrame(animate);
-        render();
-        stats.update();
-
-    }
-
     renderer.render(scene, camera);
-    function render() {
-        //console.log("mouse moving " + mouseMoving);
-        if (Date.now() - mouseMoving > 1250) {
-            var time = Date.now() * 0.005;
-            uniforms.amplitude.value = 1.2 + Math.sin(time * 0.4);
-            controls.update();
-        } else {
-            controls.update();
-        }
-      }
-    }
+}
