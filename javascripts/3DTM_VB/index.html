@@ -56,7 +56,7 @@
 	<script type="x-shader/x-fragment" id="fragmentshader">
 	  uniform vec3 lightpos;
 		uniform vec3 stimu;
-		uniform vec3 bottomColor;
+		//uniform vec3 bottomColor;
 
 		//varying vec3 vNormal;
 		varying vec3 vColor;
@@ -69,7 +69,7 @@
 
 			float directional = 15.0 / distance(vPos, stimu);
 			//max( dot( vNormal, light ), 0.25 );
-		  gl_FragColor = vec4( (directional+ambient-0.1)*vColor.x, (ambient+0.15)*vColor.y,  (ambient+0.2)*vColor.z,  0.25);
+		  gl_FragColor = vec4( (directional+ambient)*vColor.x, (directional+ambient)*vColor.y,  (directional+ambient)*vColor.z,  0.9);
 
 
 		 }

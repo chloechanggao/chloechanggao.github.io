@@ -8,50 +8,42 @@ var WIDTH = window.innerWidth,
     HEIGHT = window.innerHeight;
 
 var loader = new THREE.FontLoader();
-loader.load('shared/helvetiker_bold.typeface.json', function(font) {
+loader.load('shared/optimer_bold.typeface.json', function(font) {
 
     init(font);
     animate();
 
 });
 
+//color white: 0xFFFFF0, grey: 0xC1CDCD,black:	0x2E2E2E;
 
 function init(font) {
 
-    camera = new THREE.PerspectiveCamera(40, WIDTH / HEIGHT, 1, 10000);
-    camera.position.set(-100, 100, 200);
+    camera = new THREE.PerspectiveCamera(25, WIDTH / HEIGHT,1, 9000);
+    camera.position.set(120, -250, 300);
 
     controls = new THREE.TrackballControls(camera);
 
     scene = new THREE.Scene();
 
-    //debug
-    // var sgeometry = new THREE.SphereGeometry( 20, 32, 50 );
-    // var smaterial = new THREE.MeshStandardMaterial( {color: 0xffff00} );
-    // var sphere = new THREE.Mesh( sgeometry, smaterial );
-    // scene.add( sphere );
-
-    scene.fog = new THREE.FogExp2(0xefd1b5, 0.0025);
-
-    scene.fog.color.setHSL(0.6, 0, 1);
-
-    //light
-    var light = new THREE.HemisphereLight(0xC896FA, 0xff0000, 1.0);
-    light.position.set(0, 0, 75);
-    scene.add(light);
-
-    // var light = new THREE.DirectionalLight(0xefefff, 1);
-    // light.position.set(1, 1, 1).normalize();
-    // scene.add(light);
-    // var light = new THREE.DirectionalLight(0xffefef, 1);
-    // light.position.set(-1, -1, -1).normalize();
-    // scene.add(light);
+    scene.background = new THREE.CubeTextureLoader()
+        .setPath('shared/')
+        .load(['bl1.jpg', 'bl2.jpg', 'bl6.jpg', 'bl5.jpg', 'bl3.jpg', 'bl4.jpg']);
 
 
 
-    //
+    var textureCube = new THREE.CubeTextureLoader()
+        .setPath('textures/cube/Park3Med/')
+        .load(['px.jpg', 'nx.jpg', 'py.jpg', 'ny.jpg', 'pz.jpg', 'nz.jpg']);
+    textureCube.mapping = THREE.CubeRefractionMapping;
 
-    geometry = new THREE.TextGeometry("Outernets", {
+    scene.fog = new THREE.FogExp2(0xFFFFF0, 0.0025);
+
+    scene.fog.color.setHSL(1, 0, 1);
+
+
+
+    geometry = new THREE.TextGeometry("Oh Monday", {
 
         font: font,
 
@@ -74,10 +66,6 @@ function init(font) {
         tessellateModifier.modify(geometry);
 
     }
-
-    // var explodeModifier = new THREE.ExplodeModifier();
-    // explodeModifier.modify(geometry);
-
     var numFaces = geometry.faces.length;
 
     //
@@ -93,11 +81,21 @@ function init(font) {
 
         var index = 9 * f;
 
-        var h = 0.7 * Math.random();
-        var s = 0.2 + 0.5 * Math.random(); //0.7 + 0.5 * Math.random();
-        var l = 0.6 + 0.9 * Math.random();
+        // var h = 0.7 * Math.random();
+        // var s = 0.2 + 0.5 * Math.random(); //0.7 + 0.5 * Math.random();
+        // var l = 0.6 + 0.9 * Math.random();
+        // color.setHSL(h, s, l);
+        // var white = new THREE.Color(0xFFFFF0);
+        // var grey = new THREE.Color(0xC1CDCD);
+        // var black = new THREE.Color(0x2E2E2E);
+        //grey (yellowi)
+        //var choices = [0xFFFFF0, 0xFFD700, 	0xFFEFD5, 0xFFFACD, 0xCD9B1D];
+        //grey (blueish)
+        var choices = [0xFFFFF0, 0xF0F8FF	, 0xE0EEEE, 0x838B8B, 0xEEE9E9];
+        //black
+        //var choices = [	0x1A1A1A, 0x030303, 0x1F1F1F, 0x242424, 0x2E2E2E];
 
-        color.setHSL(h, s, l);
+        color = new THREE.Color(choices[THREE.Math.randInt(0, choices.length-1)]);
 
         var d = 10 * (0.5 - Math.random());
 
@@ -130,13 +128,7 @@ function init(font) {
         lightpos: {
             value: [0, 0, 10]
         },
-        bottomColor: {
-            value: new THREE.Color(0x2E2E2E)
-        },
-
     };
-
-    scene.fog.color.copy(uniforms.bottomColor.value);
 
 
     var shaderMaterial = new THREE.ShaderMaterial({
@@ -214,12 +206,14 @@ function animate() {
 
 function render() {
     //console.log("mouse moving " + mouseMoving);
-    if (Date.now() - mouseMoving > 1250) {
-        var time = Date.now() * 0.005;
-        uniforms.amplitude.value = 1.2 + Math.sin(time * 0.4);
-        controls.update();
-    } else {
-        controls.update();
+
+    var time = Date.now() * 0.005;
+    var sinPause = Math.sin(time * 0.4);
+    if (sinPause < -0.5){
+      sinPause = -0.5;
     }
+    uniforms.amplitude.value = 0.7 + sinPause;
+    controls.update();
+
     renderer.render(scene, camera);
 }
