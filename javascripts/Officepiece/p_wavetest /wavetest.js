@@ -25,25 +25,31 @@ function init() {
     camera.position.z = 1000;
 
     scene = new THREE.Scene();
+    scene.fog = new THREE.FogExp2( 0xefd1b5, 0.0025 );
+
+    var light = new THREE.HemisphereLight(0x0000FF, 0x0000FF, 5);
+    light.position.set(0.5, 1, 0.75);
+    scene.add(light);
+
 
     //gui
     var gui = new dat.GUI();
     params = {
-      pMove: 50
+        pMove: 50
     };
 
-    gui.add( params, 'pMove' ).min(10).max(150).step(6).name('particle Wave');
+    gui.add(params, 'pMove').min(10).max(150).step(6).name('particle Wave');
 
     particles = new Array();
 
     var PI2 = Math.PI * 2;
     var material = new THREE.SpriteCanvasMaterial({
 
-        color: 0xffffff,
+        color: 	0xFF8247,
         program: function(context) {
 
             context.beginPath();
-            context.arc(0, 0, 0.5, 0, PI2, true);
+            context.arc(0.8, 0, 0.5, 0, PI2, true);
             context.fill();
 
         }
@@ -66,6 +72,7 @@ function init() {
     }
 
     renderer = new THREE.CanvasRenderer();
+    renderer.setClearColor(	0xFFFAF0, 1);
     renderer.setPixelRatio(window.devicePixelRatio);
     renderer.setSize(window.innerWidth, window.innerHeight);
     container.appendChild(renderer.domElement);
@@ -157,7 +164,7 @@ function render() {
             particle.position.y = (Math.sin((ix + count) * 0.3) * params["pMove"]) +
                 (Math.sin((iy + count) * 0.5) * params["pMove"]);
             particle.scale.x = particle.scale.y = (Math.sin((ix + count) * 0.3) + 1) * 4 +
-                (Math.sin((iy + count) * 0.5) + 1) * 4;
+                (Math.sin((iy + count) * 0.9) + 0.5) * 10;
 
         }
 
@@ -165,6 +172,6 @@ function render() {
 
     renderer.render(scene, camera);
 
-    count += 0.1;
+    count += 0.07;
 
 }
