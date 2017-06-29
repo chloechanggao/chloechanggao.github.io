@@ -34,12 +34,13 @@ function init() {
 
     controls = new THREE.OrbitControls(camera);
 
-    controls.minAzimuthAngle = - 90;
-    controls.maxAzimuthAngle = 90;
 
-    camera.position.set(worldHalfWidth, worldHalfDepth, 300);
-    controls.movementSpeed = 500;
-    controls.lookSpeed = 0.02;
+    controls.enableZoom = false;
+    controls.minAzimuthAngle = 0;
+    controls.maxAzimuthAngle = 0;
+
+
+
 
 
 
@@ -58,7 +59,7 @@ function init() {
 
     scene.fog = new THREE.FogExp2(0xaaccff, 0.0007);
 
-    var light = new THREE.HemisphereLight(0xFCFCFC, 0xF0FFFF, 2);
+    var light = new THREE.HemisphereLight(0xFFFAF0, 0xFFFAF0, 2);
     light.position.set(0, 350, 100);
     scene.add(light);
 
@@ -76,6 +77,9 @@ function init() {
 
     geometry = new THREE.PlaneGeometry(200, 200);
     geometry.rotateX(-Math.PI / 2);
+    camera.position.set(0, 30, 350);
+    // controls.movementSpeed = 500;
+    // controls.lookSpeed = 0.02;
 
     mesh = new THREE.Mesh(geometry, material);
     scene.add(mesh);
@@ -84,7 +88,7 @@ function init() {
     renderer.setClearColor(0xFFFFFF);
     renderer.setPixelRatio(window.devicePixelRatio);
     renderer.setSize(window.innerWidth, window.innerHeight);
-    document.addEventListener('mousemove', onDocumentMouseMove, false);
+    document.addEventListener('mousemove', onMouseWheel, false);
 
     container.innerHTML = "";
 
@@ -99,7 +103,14 @@ function init() {
 
 }
 
-function onDocumentMouseMove(event) {
+function onMouseWheel(event) {
+    console.log("hehe");
+
+    var mouseX = event.clientX,
+        mouseY = event.clientY;
+    console.log(mouseY);
+    camera.position.y = mouseY;
+
 
 }
 
@@ -126,8 +137,8 @@ function animate() {
 
 function render() {
 
-    var delta = clock.getDelta();
-    controls.update(delta);
+    // var delta = clock.getDelta();
+    //controls.update();
 
 
 
