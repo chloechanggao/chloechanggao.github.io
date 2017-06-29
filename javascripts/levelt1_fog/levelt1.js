@@ -29,13 +29,19 @@ function init() {
     container = document.getElementById('container');
 
     camera = new THREE.PerspectiveCamera(VIEW_ANGLE, ASPECT, NEAR, FAR);
-    camera.position.set(0, 30, 300);
 
 
-    controls = new THREE.FirstPersonControls(camera);
 
+    controls = new THREE.OrbitControls(camera);
+
+    controls.minAzimuthAngle = - 90;
+    controls.maxAzimuthAngle = 90;
+
+    camera.position.set(worldHalfWidth, worldHalfDepth, 300);
     controls.movementSpeed = 500;
-    //controls.lookSpeed = 0.02;
+    controls.lookSpeed = 0.02;
+
+
 
     scene = new THREE.Scene();
 
@@ -78,6 +84,7 @@ function init() {
     renderer.setClearColor(0xFFFFFF);
     renderer.setPixelRatio(window.devicePixelRatio);
     renderer.setSize(window.innerWidth, window.innerHeight);
+    document.addEventListener('mousemove', onDocumentMouseMove, false);
 
     container.innerHTML = "";
 
@@ -92,6 +99,10 @@ function init() {
 
 }
 
+function onDocumentMouseMove(event) {
+
+}
+
 function onWindowResize() {
 
     camera.aspect = window.innerWidth / window.innerHeight;
@@ -99,7 +110,6 @@ function onWindowResize() {
 
     renderer.setSize(window.innerWidth, window.innerHeight);
 
-    //controls.handleResize();
 
 }
 
@@ -117,9 +127,11 @@ function animate() {
 function render() {
 
     var delta = clock.getDelta();
-
-
     controls.update(delta);
+
+
+
+
     renderer.render(scene, camera);
 
 }
