@@ -497,7 +497,7 @@ THREE.OrbitControls = function ( object, domElement ) {
 
 	function handleMouseWheel( event ) {
 
-		// console.log( 'handleMouseWheel' );
+		//console.log( 'handleMouseWheel' );
 
 		if ( event.deltaY < 0 ) {
 
@@ -734,14 +734,23 @@ THREE.OrbitControls = function ( object, domElement ) {
 
 	}
 
+	function handleMouseWheelRotate( event ) {
+		rotateStart.set(0, 0);
+		handleMouseMoveRotate({clientX: event.deltaX, clientY: event.deltaY})
+	}
+
 	function onMouseWheel( event ) {
 
-		if ( scope.enabled === false || scope.enableZoom === false || ( state !== STATE.NONE && state !== STATE.ROTATE ) ) return;
+		if ( scope.enabled === false || ( state !== STATE.NONE && state !== STATE.ROTATE ) ) return;
 
 		event.preventDefault();
 		event.stopPropagation();
 
-		handleMouseWheel( event );
+		if (scope.enableZoom) {
+		  handleMouseWheel( event );
+		} else {
+			handleMouseWheelRotate( event );
+		}
 
 		scope.dispatchEvent( startEvent ); // not sure why these are here...
 		scope.dispatchEvent( endEvent );
