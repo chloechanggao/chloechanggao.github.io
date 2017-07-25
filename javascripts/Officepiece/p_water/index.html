@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html>
+	<head>
+
+		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+		<style>
+			body {
+				background-color: #000000;
+				margin: 0px;
+				overflow: hidden;
+				font-family:Monospace;
+				font-size:13px;
+				text-align:center;
+				text-align:center;
+			}
+
+
+		</style>
+	</head>
+	<body>
+
+		<script src="shared/three.js"></script>
+		<script src="shared/Detector.js"></script>
+		<script src="shared/stats.min.js"></script>
+		<script src="shared/dat.gui.min.js"></script>
+		<script src="shared/OrbitControls.js"></script>
+		<script src="shared/SimplexNoise.js"></script>
+
+		<script src="shared/GPUComputationRenderer.js"></script>
+
+
+
+		<!-- This is the 'compute shader' for the water heightmap: -->
+		<script id="heightmapFragmentShader" type="x-shader/x-fragment">
+
+
+			#include <common>
+
+			uniform vec2 mousePos;
+			uniform float mouseSize;
+			uniform float viscosityConstant;
+
+			#define deltaTime ( 1.0 / 60.0 )
+			#define GRAVITY_CONSTANT ( resolution.x * deltaTime * 3.0 )
+
+			void main()	{
+
+				vec2 cellSize = 1.0 / resolution.xy;
+
+				vec2 uv = gl_FragCoord.xy * cellSize;
+				// heightmapValue.x == height
+				// heightmapValue.y == velocity
+				// heightmapValue.z, heightmapValue.w not used
+				vec4 heightmapValue = texture2D( heightmap, uv );
+
+				// Get neighbours
+				vec4 north = texture2D( heightmap, uv + vec2( 0.0, cellSize.y ) );
+				vec4 south = texture2D( heightmap, uv + vec2( 0.0, - cellSize.y ) );
+				vec4 east = texture2D( heightmap, uv + vec2( cellSize.x, 0.0 ) );
+				vec4 west = texture2D( heightmap, uv + vec2( - cellSize.x, 0.0 ) );
+
+				float sump = north.x + south.x + east.x + west.x - 4.0 * heightmapValue.x;
+
+				float accel = sump * GRAVITY_CONSTANT;
+
+				// Dynamics
+				heightmapValue.y += accel;
+				heightmapValue.x += heightmapValue.y * deltaTime;
+
+				// Viscosity
+				heightmapValue.x += sump * viscosityConstant;
+
+				// Mouse influence
+				float mousePhase = clamp( length( ( uv - vec2( 0.5 ) ) * BOUNDS - vec2( mousePos.x, - mousePos.y ) ) * PI / mouseSize, 0.0, PI );
+				heightmapValue.x += cos( mousePhase ) + 1.0;
+
+				gl_FragColor = heightmapValue;
+
+			}
+
+		</script>
+
+
+		<!-- This is just a smoothing 'compute shader' for using manually: -->
+		<script id="smoothFragmentShader" type="x-shader/x-fragment">
+			uniform sampler2D texture;
+
+			void main()	{
+				vec2 cellSize = 1.0 / resolution.xy;
+				vec2 uv = gl_FragCoord.xy * cellSize;
+
+				// Computes the mean of texel and 4 neighbours
+				vec4 textureValue = texture2D( texture, uv );
+				textureValue += texture2D( texture, uv + vec2( 0.0, cellSize.y ) );
+				textureValue += texture2D( texture, uv + vec2( 0.0, - cellSize.y ) );
+				textureValue += texture2D( texture, uv + vec2( cellSize.x, 0.0 ) );
+				textureValue += texture2D( texture, uv + vec2( - cellSize.x, 0.0 ) );
+				textureValue /= 5.0;
+
+				gl_FragColor = textureValue;
+			}
+		</script>
+
+		<script id="newphong_frag" type="x-shader/x-fragment">
+
+		#define PHONG
+
+		uniform vec3 diffuse;
+		uniform vec3 emissive;
+		uniform vec3 specular;
+		uniform float shininess;
+		uniform float opacity;
+
+		varying vec4 vImagedata;
+
+
+		varying vec3 vPos;
+
+		#include <common>
+		#include <packing>
+		#include <color_pars_fragment>
+		#include <uv_pars_fragment>
+		#include <uv2_pars_fragment>
+		#include <map_pars_fragment>
+		#include <alphamap_pars_fragment>
+		#include <aomap_pars_fragment>
+		#include <lightmap_pars_fragment>
+		#include <emissivemap_pars_fragment>
+		#include <envmap_pars_fragment>
+		#include <gradientmap_pars_fragment>
+		#include <fog_pars_fragment>
+		#include <bsdfs>
+		#include <lights_pars>
+		#include <lights_phong_pars_fragment>
+		#include <shadowmap_pars_fragment>
+		#include <bumpmap_pars_fragment>
+		#include <normalmap_pars_fragment>
+		#include <specularmap_pars_fragment>
+		#include <logdepthbuf_pars_fragment>
+		#include <clipping_planes_pars_fragment>
+
+		void main() {
+			// glEnable(GL_BLEND);
+			// glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+
+			#include <clipping_planes_fragment>
+
+			float dist = vPos.x * vPos.x + vPos.y * vPos.y;
+			bool ontext = false;
+			// if (dist < 25000.9 && dist > 16000.0) {
+			// 	ontext = true;
+			// }
+			if (vImagedata[3] < 0.0005) {
+				ontext = true;
+			}
+
+			//vec4 diffuseColor = vImagedata;
+			vec4 diffuseColor = vec4( diffuse, ontext ? 1.0 : opacity );
+
+
+			ReflectedLight reflectedLight = ReflectedLight( vec3( 0.0 ), vec3( 0.0 ), vec3( 0.0 ), vec3( 0.0 ) );
+			vec3 totalEmissiveRadiance = emissive;
+
+			#include <logdepthbuf_fragment>
+			#include <map_fragment>
+			#include <color_fragment>
+			#include <alphamap_fragment>
+			#include <alphatest_fragment>
+			#include <specularmap_fragment>
+			#include <normal_flip>
+			#include <normal_fragment>
+			#include <emissivemap_fragment>
+
+			// accumulation
+			#include <lights_phong_fragment>
+			#include <lights_template>
+
+			// modulation
+			#include <aomap_fragment>
+
+			vec3 outgoingLight = reflectedLight.directDiffuse + reflectedLight.indirectDiffuse + reflectedLight.directSpecular + reflectedLight.indirectSpecular + totalEmissiveRadiance;
+
+			#include <envmap_fragment>
+
+			gl_FragColor = vec4( outgoingLight, diffuseColor.a );
+
+			#include <premultiplied_alpha_fragment>
+			#include <tonemapping_fragment>
+			#include <encodings_fragment>
+			#include <fog_fragment>
+
+		}
+
+		</script>
+		<!-- This is the water visualization shader, copied from the MeshPhongMaterial and modified: -->
+		<script id="waterVertexShader" type="x-shader/x-vertex">
+
+			uniform sampler2D heightmap;
+
+			attribute vec4 imagedata;
+			varying vec4 vImagedata;
+
+			#define PHONG
+
+			varying vec3 vViewPosition;
+			varying vec3 vPos;
+
+			#ifndef FLAT_SHADED
+
+				varying vec3 vNormal;
+				varying vec4 vColor;
+
+
+			#endif
+
+			#include <common>
+			#include <uv_pars_vertex>
+			#include <uv2_pars_vertex>
+			#include <displacementmap_pars_vertex>
+			#include <envmap_pars_vertex>
+			#include <color_pars_vertex>
+			#include <morphtarget_pars_vertex>
+			#include <skinning_pars_vertex>
+			#include <shadowmap_pars_vertex>
+			#include <logdepthbuf_pars_vertex>
+			#include <clipping_planes_pars_vertex>
+
+			void main() {
+
+				vec2 cellSize = vec2( 1.0 / WIDTH, 1.0 / WIDTH );
+
+				vImagedata = imagedata;
+
+				#include <uv_vertex>
+				#include <uv2_vertex>
+				#include <color_vertex>
+
+				// # include <beginnormal_vertex>
+				// Compute normal from heightmap
+				vec3 objectNormal = vec3(
+					( texture2D( heightmap, uv + vec2( - cellSize.x, 0 ) ).x - texture2D( heightmap, uv + vec2( cellSize.x, 0 ) ).x ) * WIDTH / BOUNDS,
+					( texture2D( heightmap, uv + vec2( 0, - cellSize.y ) ).x - texture2D( heightmap, uv + vec2( 0, cellSize.y ) ).x ) * WIDTH / BOUNDS,
+					1.0 );
+
+
+				//<beginnormal_vertex>
+
+				#include <morphnormal_vertex>
+				#include <skinbase_vertex>
+				#include <skinnormal_vertex>
+				#include <defaultnormal_vertex>
+
+
+
+			#ifndef FLAT_SHADED // Normal computed with derivatives when FLAT_SHADED
+
+				vNormal = normalize( transformedNormal );
+
+			#endif
+ 				vPos = position;
+
+				//# include <begin_vertex>
+				float heightValue = texture2D( heightmap, uv ).x;
+				vec3 transformed = vec3( position.x, position.y, heightValue );
+				//<begin_vertex>
+
+				#include <morphtarget_vertex>
+				#include <skinning_vertex>
+				#include <displacementmap_vertex>
+				#include <project_vertex>
+				#include <logdepthbuf_vertex>
+				#include <clipping_planes_vertex>
+
+				vViewPosition = - mvPosition.xyz;
+
+				#include <worldpos_vertex>
+				#include <envmap_vertex>
+				#include <shadowmap_vertex>
+
+
+
+			}
+
+		</script>
+
+		<script src="waters1.js"></script>
+
+	</body>
+</html>
