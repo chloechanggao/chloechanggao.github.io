@@ -51,6 +51,18 @@ ObjectMngCV = (function() {
     }
 
 
+
+    ObjectMngCV.prototype.recreateVlist = function(){
+
+      this._vList = [];
+      var randomNum = Math.random();
+      for (var i = 0; i < this._geo.vertices.length; i++) {
+          var _v = new PointMngCV(this._geo.vertices[i], i, this, randomNum);
+          this._vList.push(_v);
+      }
+
+    }
+
     /*
     PLANE TEXTURE LOADED
     */
@@ -79,10 +91,7 @@ ObjectMngCV = (function() {
         this._mesh = new THREE.Mesh(this._geo, _material);
 
         //
-        for (var i = 0; i < this._geo.vertices.length; i++) {
-            var _v = new PointMngCV(this._geo.vertices[i], i, this);
-            this._vList.push(_v);
-        }
+        this.recreateVlist();
 
         //
         this._world.addMesh(this._mesh, this);
@@ -189,6 +198,7 @@ ObjectMngCV = (function() {
 
             if (Math.abs(this._meshText.position.z - (-100)) < 1) {
                 this._world.animeEnd();
+                this.recreateVlist();
             }
         }
 

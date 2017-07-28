@@ -305,7 +305,7 @@
       bNums: 200
     };
 
-    gui.add( params, 'bNums' ).min(1).max(200).step(6).name('Birds Amount');
+    //gui.add( params, 'bNums' ).min(25).max(200).step(6).name('Birds Amount');
 
     for ( var i = 0; i < 500; i ++ ) {
 
@@ -319,7 +319,7 @@
       boid.setAvoidWalls( true );
       boid.setWorldSize( 500, 500, 400 );
 
-      bird = birds[ i ] = new THREE.Mesh( new Bird(), new THREE.MeshBasicMaterial( { color:Math.random() * 0xffffff, side: THREE.DoubleSide } ) );
+      bird = birds[ i ] = new THREE.Mesh( new Bird(), new THREE.MeshBasicMaterial( { color:Math.random() * 0xffff00, side: THREE.DoubleSide } ) );
       bird.phase = Math.floor( Math.random() * 62.83 );
       scene.add( bird );
 
@@ -335,7 +335,7 @@
     document.body.appendChild( renderer.domElement );
 
     stats = new Stats();
-    document.getElementById( 'container' ).appendChild(stats.dom);
+    //document.getElementById( 'container' ).appendChild(stats.dom);
 
     //
     //gui
