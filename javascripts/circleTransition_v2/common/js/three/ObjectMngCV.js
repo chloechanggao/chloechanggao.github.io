@@ -39,6 +39,73 @@ ObjectMngCV = (function() {
     }
 
 
+
+
+    /*
+    PLANE TEXTURE LOADED
+    */
+    ObjectMngCV.prototype.loadCompPlane = function(e) {
+
+        this.recreateFrontPlane(e);
+
+        //
+        this.recreateVlist();
+
+        //
+        this.recreateTextPlane();
+
+
+    }
+
+
+
+    ObjectMngCV.prototype.createPlane = function() {
+        var _this = this;
+        var currentPic = Math.floor(Math.random() * bgPics.length);
+        console.log(currentPic);
+        var textureLoader = new THREE.TextureLoader();
+        textureLoader.load(this._world._fronturls[currentPic], function(e) {
+            _this.loadCompPlane(e)
+        });
+    }
+
+
+    //变形的planeGeometry
+    ObjectMngCV.prototype.recreateFrontPlane = function(e){
+      if (this._mesh != null || this._mesh != undefined) {
+          this._world.removeMesh(this._mesh, null);
+      }
+
+      var map = e;
+      map.wrapS = map.wrapT = THREE.RepeatWrapping;
+
+      var _op = {
+          ambient: 0xFFFFFF,
+          color: 0xffffff,
+          side: THREE.DoubleSide,
+          map: map,
+          transparent: true,
+          opacity: 1,
+          overdraw: 0.5
+      };
+
+      //var _material = new THREE.MeshBasicMaterial( _op );
+      //var _material = new THREE.MeshLambertMaterial( _op );
+
+      var _material = new THREE.MeshPhongMaterial(_op);
+
+
+      this._geo = new THREE.PlaneGeometry(this._world._stageWidth, this._world._stageWidth, this._segW, this._segH);
+      this._geo.dymanic = true;
+
+      this._mesh = new THREE.Mesh(this._geo, _material);
+
+      this._world.addMesh(this._mesh, this);
+
+
+    }
+
+    //
     ObjectMngCV.prototype.recreateVlist = function() {
 
         this._vList = [];
@@ -49,66 +116,6 @@ ObjectMngCV = (function() {
         }
 
     }
-
-    /*
-    PLANE TEXTURE LOADED
-    */
-    ObjectMngCV.prototype.loadCompPlane = function(e) {
-        var map = e;
-        map.wrapS = map.wrapT = THREE.RepeatWrapping;
-
-        var _op = {
-            ambient: 0xFFFFFF,
-            color: 0xffffff,
-            side: THREE.DoubleSide,
-            map: map,
-            transparent: true,
-            opacity: 1,
-            overdraw: 0.5
-        };
-
-        //var _material = new THREE.MeshBasicMaterial( _op );
-        //var _material = new THREE.MeshLambertMaterial( _op );
-
-        var _material = new THREE.MeshPhongMaterial(_op);
-
-
-        this._geo = new THREE.PlaneGeometry(this._world._stageWidth, this._world._stageWidth, this._segW, this._segH);
-        this._geo.dymanic = true;
-
-        this._mesh = new THREE.Mesh(this._geo, _material);
-
-        //
-        this.recreateVlist();
-
-        //
-        this._world.addMesh(this._mesh, this);
-
-        //
-
-        this.recreateTextPlane();
-
-        //
-
-        //this.createPlane();
-
-    }
-
-
-
-    ObjectMngCV.prototype.createPlane = function() {
-      if (this._mesh != null || this._mesh != undefined) {
-          this._world.removeMesh(this._mesh, null);
-      }
-        var _this = this;
-        var currentPic = Math.floor(Math.random() * bgPics.length);
-        console.log(currentPic);
-        var textureLoader = new THREE.TextureLoader();
-        textureLoader.load(this._world._fronturls[currentPic], function(e) {
-            _this.loadCompPlane(e)
-        });
-    }
-
 
     /*
     TEXT FRAME
@@ -211,10 +218,12 @@ ObjectMngCV = (function() {
             this._meshText.position.z = (this._meshText.position.z * 0.92) + (-100 * 0.08);
 
             if (Math.abs(this._meshText.position.z - (-100)) < 1) {
+
                 this._world.animeEnd();
                 this.recreateVlist();
                 this.recreateTextPlane();
-                this.createPlane();
+                this.recreateFrontPlane();
+
             }
         }
 
