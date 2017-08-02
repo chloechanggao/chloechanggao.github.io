@@ -59,9 +59,9 @@ ObjectMngCV = (function() {
 
 
 
-    ObjectMngCV.prototype.createPlane = function() {
+    ObjectMngCV.prototype.createPlane = function(e) {
         var _this = this;
-        var currentPic = Math.floor(Math.random() * bgPics.length);
+        var currentPic = Math.floor(Math.random() * this._world._fronturls.length);
         console.log(currentPic);
         var textureLoader = new THREE.TextureLoader();
         textureLoader.load(this._world._fronturls[currentPic], function(e) {
@@ -73,7 +73,7 @@ ObjectMngCV = (function() {
     //变形的planeGeometry
     ObjectMngCV.prototype.recreateFrontPlane = function(e){
       if (this._mesh != null || this._mesh != undefined) {
-          this._world.removeMesh(this._mesh, null);
+          this._world.removeMesh(this._mesh, this);
       }
 
       var map = e;
@@ -220,9 +220,10 @@ ObjectMngCV = (function() {
             if (Math.abs(this._meshText.position.z - (-100)) < 1) {
 
                 this._world.animeEnd();
-                this.recreateVlist();
-                this.recreateTextPlane();
-                this.recreateFrontPlane();
+                //this.recreateVlist();
+                //this.recreateTextPlane();
+                //this.recreateFrontPlane();
+                this.createPlane();
 
             }
         }

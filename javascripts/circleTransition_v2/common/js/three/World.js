@@ -149,7 +149,7 @@ World = (function() {
 
     World.prototype.createModel = function() {
         this._objMng.createPlane();
-    
+
     }
 
 
