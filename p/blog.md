@@ -21,3 +21,7 @@ permalink: /blog/
 
 
 [Sense Me Move Me](http://itp.cgao.me/p/courses/smmm.html)
+
+
+
+[Designing For Live Performance](http://itp.cgao.me/p/courses/dflp.html)
