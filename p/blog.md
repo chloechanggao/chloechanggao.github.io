@@ -16,7 +16,7 @@ permalink: /blog/
 
 
 
-[Always On Always Connected](http://itp.cgao.me/p/courses/aoac.html)
+[Sketching Communities](http://itp.cgao.me/p/courses/sc.html)
 
 
 
