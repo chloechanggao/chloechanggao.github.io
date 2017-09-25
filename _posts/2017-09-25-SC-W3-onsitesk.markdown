@@ -18,7 +18,7 @@ This is with Paper
 
 This is with Procreate 
 
-![S17](/picsF17_sc_sp1.gif)
+![S17](/pics/F17_sc_sp1.gif)
 
 Digital tool is harder than real pencil, especially I do not have a smart pen, just drawing with finger…. Besides tools, Onsite sketching strangers It is definitely harder than sketching classmate at ITP floor, an interesting thing is when they find out I was sketching them, they normally did not talk to me or get angry, they just left. Another thing I learned is timing is very important, the community act totally different at the same place in different time, so when I finish my 1 hr sketching and ready to leave, things suddenly changed. Next time I’ll try another time to observe more. 
 
