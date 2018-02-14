@@ -176,6 +176,39 @@
             </objects>
             <point key="canvasLocation" x="24.800000000000001" y="33.990147783251231"/>
         </scene>
+        <!--Second View Controller-->
+        <scene sceneID="axn-Km-jxD">
+            <objects>
+                <viewController storyboardIdentifier="SecondViewController" id="QQG-rx-pPx" customClass="SecondViewController" customModule="LockScreen" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="pG2-Or-T3C">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oIW-Eg-lxL">
+                                <rect key="frame" x="146" y="385" width="82" height="43"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="43" id="EEX-LN-bnc"/>
+                                    <constraint firstAttribute="width" constant="82" id="Nrf-hS-13O"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                <state key="normal" title="Pop"/>
+                                <connections>
+                                    <action selector="handlePop:" destination="QQG-rx-pPx" eventType="touchUpInside" id="HmD-9c-rBT"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="oIW-Eg-lxL" firstAttribute="centerY" secondItem="pG2-Or-T3C" secondAttribute="centerY" id="a0o-Bu-Tbe"/>
+                            <constraint firstItem="oIW-Eg-lxL" firstAttribute="centerX" secondItem="pG2-Or-T3C" secondAttribute="centerX" id="b3d-bG-ARl"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="quX-1Y-Aw4"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZXZ-5g-hJM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="981.60000000000002" y="32.512315270935964"/>
+        </scene>
     </scenes>
     <resources>
         <image name="bt1.png" width="207" height="207"/>

@@ -148,9 +148,20 @@ class ViewController: UIViewController {
                 updateCircleFeedback(circleNumber: circleNumber, isOn: true)
             }
             
-            // When swipePattern array count hits 3, check against lockPattern.
+
             if swipePattern.count == 5 {
-                statusLable.text = (swipePattern == lockPattern) ? "Unlocked" : "Try Again"
+                if swipePattern == lockPattern{
+                    statusLable.text = "Unlocked"
+                    
+                    let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                    
+                    let secondViewController = storyboard.instantiateViewController(withIdentifier: "SecondViewController")
+                    
+                    self.present(secondViewController, animated: true, completion: nil)
+                } else{
+                    statusLable.text = "Try Again"
+                }
+
             }
         }
         
