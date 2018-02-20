@@ -3,11 +3,9 @@ layout: default
 
 ---
 
-### Selected Projects
+
 
 [Ballroom](./p/select/ballroom.html)
-
-[Puzzle Time](./p/select/puzzle.html)
 
 [Little Prince](./p/select/little-prince.html)
 
