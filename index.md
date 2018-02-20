@@ -3,7 +3,7 @@ layout: default
 
 ---
 
-# SELECTED PROJECTS
+# Selected Projects
 
 [Ballroom](./p/select/ballroom.html)
 
