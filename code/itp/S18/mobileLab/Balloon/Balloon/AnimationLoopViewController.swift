@@ -12,6 +12,8 @@ class AnimationLoopViewController: UIViewController, UIGestureRecognizerDelegate
     var scaleView2: UIView!
     var scaleView3: UIView!
     
+    var touchedView = 0
+ 
     
     // Variable for tracking current scale.
     var currentScale: CGFloat = 1.0;
@@ -84,41 +86,109 @@ class AnimationLoopViewController: UIViewController, UIGestureRecognizerDelegate
         displayLink.add(to: RunLoop.current, forMode: RunLoopMode.defaultRunLoopMode)
         
         
-        
     }
     
+   
     @objc
-    func updateLoop() {
+    func updateLoop(ViewTouched:UIView) {
         // Determine if scalingup or down based on flag.
+
         let value = shouldScaleUp ? scaleSpeed : -scaleSpeed
         
         // Scale up or down view.
         // Keep scale above 1.0 and 5.0
         currentScale = max(currentScale + value, 1.0)
-        currentScale = min(currentScale, 1.25)
+        currentScale = min(currentScale, 2.5)
         
         
         // Scale view.
-        scaleView.transform = CGAffineTransform(scaleX: currentScale, y: currentScale)
-        scaleView2.transform = CGAffineTransform(scaleX: currentScale, y: currentScale)
-        scaleView3.transform = CGAffineTransform(scaleX: currentScale, y: currentScale)
+
+
+        
+        if  touchedView == 1 {
+            scaleView.transform = CGAffineTransform(scaleX: currentScale, y: currentScale)
+        } else if touchedView == 2 {
+            scaleView2.transform = CGAffineTransform(scaleX: currentScale, y: currentScale)
+            
+        } else if touchedView == 3 {
+            scaleView3.transform = CGAffineTransform(scaleX: currentScale, y: currentScale)
+            
+        }
+        
+//        scaleView2.transform = CGAffineTransform(scaleX: currentScale, y: currentScale)
+//        scaleView3.transform = CGAffineTransform(scaleX: currentScale, y: currentScale)
     }
     
+    
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        // Get first touch.
+        
+        
+        if let firstTouch = touches.first {
+            let hitView = self.view.hitTest(firstTouch.location(in: self.view), with: event)
+
+
+            // Process swipe pattern based on which hexagon is touched.
+            if hitView == scaleView {
+                shouldScaleUp = true
+                touchedView = 1
+
+            } else if hitView == scaleView2 {
+                touchedView = 2
+                shouldScaleUp = true
+
+
+            } else if hitView == scaleView3 {
+                touchedView = 3
+                shouldScaleUp = true
+
+            } else {
+                touchedView = 0
+            }
+        }
+    }
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        
+        
+
+        if let firstTouch = touches.first {
+            let hitView = self.view.hitTest(firstTouch.location(in: self.view), with: event)
+
+
+            // Process swipe pattern based on which hexagon is touched.
+            if hitView == scaleView {
+                shouldScaleUp = false
+
+            } else if hitView == scaleView2 {
+                shouldScaleUp = false
+
+
+            } else if hitView == scaleView3 {
+                shouldScaleUp = false
+
+
+            }
+        }
+
+    }
     
     
     // Set flag to true on screen press.
-    
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
 
-        shouldScaleUp = true
-    }
-    
-    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
-    }
-    
-    // Set flag to false on screen release.
-    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        shouldScaleUp = false
-    }
-    
+//    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+//
+//        shouldScaleUp = true
+//    }
+//
+//    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+//    }
+//
+//    // Set flag to false on screen release.
+//    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+//
+//                shouldScaleUp = false
+//            }
+
 }
+
