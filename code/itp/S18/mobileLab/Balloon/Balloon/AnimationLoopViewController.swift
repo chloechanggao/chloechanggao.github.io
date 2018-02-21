@@ -28,7 +28,7 @@ class AnimationLoopViewController: UIViewController, UIGestureRecognizerDelegate
     let viewRadius: CGFloat = 50.0
     
     // Custom purple color.
-    let purpleColor = UIColor(red:0.59, green:0.24, blue:0.59, alpha:1.0)
+    let purpleColor = UIColor(red:0.01, green:0.01, blue:0.1, alpha:0.2)
 
     
     override func viewDidLoad() {
@@ -107,11 +107,22 @@ class AnimationLoopViewController: UIViewController, UIGestureRecognizerDelegate
         
         if  touchedView == 1 {
             scaleView.transform = CGAffineTransform(scaleX: currentScale, y: currentScale)
+            scaleView.alpha = 1.0
+            scaleView2.alpha = 0.3
+            scaleView3.alpha = 0.3
+        
+
         } else if touchedView == 2 {
             scaleView2.transform = CGAffineTransform(scaleX: currentScale, y: currentScale)
+            scaleView2.alpha = 1.0
+            scaleView.alpha = 0.3
+            scaleView3.alpha = 0.3
             
         } else if touchedView == 3 {
             scaleView3.transform = CGAffineTransform(scaleX: currentScale, y: currentScale)
+            scaleView3.alpha = 1.0
+            scaleView.alpha = 0.3
+            scaleView2.alpha = 0.3
             
         }
         
@@ -148,6 +159,10 @@ class AnimationLoopViewController: UIViewController, UIGestureRecognizerDelegate
             }
         }
     }
+    
+        override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+        }
+    
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         
         
@@ -159,6 +174,8 @@ class AnimationLoopViewController: UIViewController, UIGestureRecognizerDelegate
             // Process swipe pattern based on which hexagon is touched.
             if hitView == scaleView {
                 shouldScaleUp = false
+
+                
 
             } else if hitView == scaleView2 {
                 shouldScaleUp = false
