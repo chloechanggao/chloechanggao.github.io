@@ -15,7 +15,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		8900E5D0203DCEFC00DEA7C8 /* Balloon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Balloon.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8900E5D0203DCEFC00DEA7C8 /* PressTheDots.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PressTheDots.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8900E5D3203DCEFC00DEA7C8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8900E5D5203DCEFC00DEA7C8 /* AnimationLoopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationLoopViewController.swift; sourceTree = "<group>"; };
 		8900E5D8203DCEFC00DEA7C8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -46,7 +46,7 @@
 		8900E5D1203DCEFC00DEA7C8 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				8900E5D0203DCEFC00DEA7C8 /* Balloon.app */,
+				8900E5D0203DCEFC00DEA7C8 /* PressTheDots.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -67,9 +67,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		8900E5CF203DCEFC00DEA7C8 /* Balloon */ = {
+		8900E5CF203DCEFC00DEA7C8 /* PressTheDots */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 8900E5E2203DCEFC00DEA7C8 /* Build configuration list for PBXNativeTarget "Balloon" */;
+			buildConfigurationList = 8900E5E2203DCEFC00DEA7C8 /* Build configuration list for PBXNativeTarget "PressTheDots" */;
 			buildPhases = (
 				8900E5CC203DCEFC00DEA7C8 /* Sources */,
 				8900E5CD203DCEFC00DEA7C8 /* Frameworks */,
@@ -79,9 +79,9 @@
 			);
 			dependencies = (
 			);
-			name = Balloon;
+			name = PressTheDots;
 			productName = Balloon;
-			productReference = 8900E5D0203DCEFC00DEA7C8 /* Balloon.app */;
+			productReference = 8900E5D0203DCEFC00DEA7C8 /* PressTheDots.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -100,7 +100,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 8900E5CB203DCEFC00DEA7C8 /* Build configuration list for PBXProject "Balloon" */;
+			buildConfigurationList = 8900E5CB203DCEFC00DEA7C8 /* Build configuration list for PBXProject "PressTheDots" */;
 			compatibilityVersion = "Xcode 8.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -113,7 +113,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				8900E5CF203DCEFC00DEA7C8 /* Balloon */,
+				8900E5CF203DCEFC00DEA7C8 /* PressTheDots */,
 			);
 		};
 /* End PBXProject section */
@@ -275,10 +275,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = F6XDV45FFK;
+				DEVELOPMENT_TEAM = PZ779G7NTY;
 				INFOPLIST_FILE = Balloon/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.chloeballoon.Balloon;
+				PRODUCT_BUNDLE_IDENTIFIER = com.anarapp.MissChloe;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -290,10 +290,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = F6XDV45FFK;
+				DEVELOPMENT_TEAM = PZ779G7NTY;
 				INFOPLIST_FILE = Balloon/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.chloeballoon.Balloon;
+				PRODUCT_BUNDLE_IDENTIFIER = com.anarapp.MissChloe;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -303,7 +303,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		8900E5CB203DCEFC00DEA7C8 /* Build configuration list for PBXProject "Balloon" */ = {
+		8900E5CB203DCEFC00DEA7C8 /* Build configuration list for PBXProject "PressTheDots" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				8900E5E0203DCEFC00DEA7C8 /* Debug */,
@@ -312,7 +312,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		8900E5E2203DCEFC00DEA7C8 /* Build configuration list for PBXNativeTarget "Balloon" */ = {
+		8900E5E2203DCEFC00DEA7C8 /* Build configuration list for PBXNativeTarget "PressTheDots" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				8900E5E3203DCEFC00DEA7C8 /* Debug */,
