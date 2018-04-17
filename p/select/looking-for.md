@@ -1,7 +1,10 @@
 ---
 layout: page
-tags: [featured]
+
 ---
+Augmented Reality/ Storrytelling/ Mobile Experience/ Virtual Kinetic Sculptures 
+
+
 “Looking For” consists of three site-specific AR installations. Each of the installations characterizes one emotion: lost and exploration, excitement, and desperation. It explores the technique of objectifying emotions into augmented reality scenes at specific locations. Users see through a mobile app to watch these stories and experience the emotions.
  
  
