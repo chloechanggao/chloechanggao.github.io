@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Class Blog Post
+title: Class Blog
 permalink: /blog/
 ---
 
