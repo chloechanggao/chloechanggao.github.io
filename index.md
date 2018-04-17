@@ -3,7 +3,7 @@ layout: default
 
 ---
 
-Alt-CURRENT PROJECTS
+###### CURRENT PROJECTS
 
 
 
