@@ -3,7 +3,7 @@ layout: default
 
 ---
 
-## CURRENT PROJECTS
+CURRENT PROJECTS
 
 
 
