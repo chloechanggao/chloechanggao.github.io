@@ -25,3 +25,11 @@ permalink: /blog/
 
 
 [Designing For Live Performance](http://itp.cgao.me/p/courses/dflp.html)
+
+
+
+[ICM](http://itp.cgao.me/p/courses/icm.html)
+
+
+
+[Physical Computing](http://itp.cgao.me/p/courses/pcomp.html)
