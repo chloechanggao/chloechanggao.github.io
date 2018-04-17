@@ -4,15 +4,14 @@ title: About
 permalink: /about/
 ---
 
+Professional ice cream monster and visual technologist.
+I make beautiful and meaningful interactions, sometimes useful
 
-Born and raised in China, Chang Gao  was accepted into UC Berkeley,  and introduced to Digital Arts and Postproduction while studying there.  
-
-Based in New York now, Chang is a Visual Artist featured in local and international portal such as Tencent, New York Fashion Week. Chang is now study at NYU Tisch School of the Art, Interactive Telecommunication Program.
-
-
+Made in China, built in California and currently developing in New York City. I am always ready and excited to make magical stuff.
 
 
-[Portfolio](http://artsy.cgao.me/)
+
+[Portfolio](http://cgao.me/)
 
 [Instagram](https://www.instagram.com/chloe.ative/)
 
