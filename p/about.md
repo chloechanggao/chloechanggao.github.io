@@ -5,7 +5,7 @@ permalink: /about/
 ---
 
 Professional ice cream monster and visual technologist.
-I make beautiful and meaningful interactions, sometimes useful
+I make beautiful and meaningful interactions, most of the times useful.
 
 Made in China, built in California and currently developing in New York City. I am always ready and excited to make magical stuff.
 
